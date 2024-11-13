@@ -666,7 +666,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		const $columns = this.columns
 			.map((col) => {
 				let classes = [
-					"list-row-col ellipsis",
+					"list-row-col",
 					col.type == "Subject" ? "list-subject level" : "hidden-xs",
 					col.type == "Tag" ? "tag-col hide" : "",
 					frappe.model.is_numeric_field(col.df) ? "text-right" : "",
@@ -702,7 +702,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 
 	get_header_html_skeleton(left = "", right = "") {
 		return `
-			<header class="level list-row-head text-muted">
+			<header class="level list-row-head text-uppercase text-end">
 				<div class="level-left list-header-subject">
 					${left}
 				</div>
@@ -736,14 +736,13 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		return `
 			<div class="list-row-container" tabindex="1">
 				<div class="level list-row">
-					<div class="level-left ellipsis">
+					<div class="level-left">
 						${left}
 					</div>
-					<div class="level-right text-muted ellipsis">
+					<div class="level-right text-muted">
 						${right}
 					</div>
 				</div>
-				<div class="list-row-border"></div>
 			</div>
 		`;
 	}
@@ -752,7 +751,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		if (col.type === "Status" || col.df?.options == "Workflow State") {
 			let show_workflow_state = col.df?.options == "Workflow State";
 			return `
-				<div class="list-row-col hidden-xs ellipsis">
+				<div class="list-row-col hidden-xs">
 					${this.get_indicator_html(doc, show_workflow_state)}
 				</div>
 			`;
@@ -764,7 +763,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 				? this.get_tags_html(doc._user_tags, 2, true)
 				: '<div class="tags-empty">-</div>';
 			return `
-				<div class="list-row-col tag-col ${tags_display_class} hidden-xs ellipsis">
+				<div class="list-row-col tag-col ${tags_display_class} hidden-xs">
 					${tags_html}
 				</div>
 			`;
@@ -828,12 +827,12 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 			} else if (df.fieldtype === "Select") {
 				html = `<span class="filterable indicator-pill ${frappe.utils.guess_colour(
 					_value
-				)} ellipsis"
+				)} "
 					data-filter="${fieldname},=,${value}">
 					<span class="ellipsis"> ${__(_value)} </span>
 				</span>`;
 			} else if (df.fieldtype === "Link") {
-				html = `<a class="filterable ellipsis"
+				html = `<a class="filterable"
 					data-filter="${fieldname},=,${value}">
 					${_value}
 				</a>`;
@@ -842,7 +841,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 					${_value}
 				</span>`;
 			} else {
-				html = `<a class="filterable ellipsis"
+				html = `<a class="filterable"
 					data-filter="${fieldname},=,${frappe.utils.escape_html(value)}">
 					${format()}
 				</a>`;
@@ -859,7 +858,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 			Field: "hidden-xs",
 		};
 		const css_class = [
-			"list-row-col ellipsis",
+			"list-row-col",
 			class_map[col.type],
 			frappe.model.is_numeric_field(df) ? "text-right" : "",
 		].join(" ");

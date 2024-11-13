@@ -62,7 +62,11 @@
 	display: flex;
 	flex-direction: column;
 	outline: none;
-	padding: 0 var(--padding-xs);
+	// padding: 0 var(--padding-xs);
+
+	&:nth-child(odd) {
+		background-color: #EEEEEE;
+	}
 
 	&:focus {
 		.list-row {
@@ -82,19 +86,22 @@
 
 .list-row {
 	padding: 15px 15px 15px 0px;
-	height: 40px;
+	height: 60px;
 	cursor: pointer;
 	transition: color 0.2s;
 	-webkit-transition: color 0.2s;
 	@include get_textstyle("base", "regular");
-	border-radius: var(--border-radius-md);
+	// border-radius: var(--border-radius-md);
+	margin-top: -1px;
+
 
 	&:hover:not(.list-row-head) {
 		background-color: var(--highlight-color);
 	}
 
 	&:last-child {
-		border-bottom: 0px;
+		// border-bottom: 0px;
+		border: 1px solid #bbb;
 	}
 
 	.level-left {
@@ -122,6 +129,7 @@
 	// 	margin-right: var(--margin-sm);
 	// 	min-width: 60px;
 	// }
+
 
 	.list-row-activity {
 		justify-content: flex-end;
@@ -170,9 +178,11 @@
 	@extend .list-row;
 	cursor: default;
 	background-color: var(--subtle-fg);
-	height: 30px;
-	margin: 0.5rem var(--padding-xs);
-	border-radius: var(--border-radius-md);
+	// height: 30px;
+	// margin: 0.5rem var(--padding-xs);
+	// border-radius: var(--border-radius-md);
+	border: 1px solid #bbb;
+	
 
 	.list-check-all {
 		margin-left: 11px;
@@ -188,7 +198,10 @@
 
 .list-row-col {
 	flex: 1;
-	margin-right: 15px;
+	border: 1px solid #bbb;
+	min-height: 60px;
+	margin-left: -1px;
+
 
 	a {
 		color: var(--text-muted);
