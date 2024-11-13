@@ -1010,8 +1010,21 @@ body {
 	}
 
 	.standard-sidebar-item {
-		justify-content: space-between;
-		padding: 0px;
+		// justify-content: space-between;
+		// padding: 0px;
+		color: #f4f4f4;
+		font-size: 12px;
+		border-bottom: 1px solid #090a0c;
+		border-top: 1px solid #40454f;
+		padding: 12px;
+		display: block;
+		text-decoration: none;
+		text-shadow: 0 1px 0 #000;
+		background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #373b44), color-stop(100%, #2c2f36));
+		background-image: -webkit-linear-gradient(#373b44, #2c2f36);
+		background-image: -moz-linear-gradient(#373b44, #2c2f36);
+		background-image: -o-linear-gradient(#373b44, #2c2f36);
+		background-image: linear-gradient(#373b44, #2c2f36);
 
 		.sidebar-item-control {
 			> * {
@@ -1046,6 +1059,7 @@ body {
 
 		.sidebar-item-label {
 			flex: 1;
+			color: #f4f4f4;
 		}
 
 		.item-anchor {
@@ -1072,8 +1086,23 @@ body {
 		.sidebar-item-container {
 			margin-left: 10px;
 
+			// Nested items
 			.standard-sidebar-item {
-				justify-content: start;
+				// justify-content: start;
+				text-decoration: none;
+				border-top: 1px solid #f6f6f6;
+				border-bottom: 1px solid #c9c9c9;
+				font-size: 12px;
+				color: #555;
+				display: block;
+				background: #eee;
+				padding: 5px 15px;
+				text-shadow: 0 1px 0 #fff;
+				white-space: nowrap;
+
+				.sidebar-item-label {
+					color: #333;
+				}
 			}
 		}
 
@@ -1117,8 +1146,14 @@ body {
 				&:hover,
 				&.selected {
 					.drag-handle {
-						display: inline-block;
-						background-color: var(--bg-color);
+						// display: inline-block;
+						// background-color: var(--bg-color);
+						border-top-color: #798cb6;
+						background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #5970a3), color-stop(100%, #394768));
+						background-image: -webkit-linear-gradient(#5970a3, #394768);
+						background-image: -moz-linear-gradient(#5970a3, #394768);
+						background-image: -o-linear-gradient(#5970a3, #394768);
+						background-image: linear-gradient(#5970a3, #394768);
 					}
 
 					.setting-btn,
