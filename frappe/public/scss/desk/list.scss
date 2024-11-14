@@ -213,6 +213,13 @@ html[data-theme="dark"] .list-row-container:nth-child(odd) {
 	margin-left: -1px;
 	overflow: hidden;
 
+	&:first-of-type span:last-child {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		padding-right: 20px;
+	}
+
 
 	a {
 		color: var(--text-muted);
@@ -223,6 +230,8 @@ html[data-theme="dark"] .list-row-container:nth-child(odd) {
 		text-decoration: underline;
 	}
 }
+
+
 
 $level-margin-right: 8px;
 
