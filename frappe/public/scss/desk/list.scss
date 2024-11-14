@@ -3,6 +3,10 @@
 
 // }
 
+html[data-theme="dark"] .list-row-container:nth-child(odd) {
+    background-color: none;
+}
+
 .freeze-row {
 	.level-left,
 	.level-right,

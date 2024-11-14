@@ -1025,6 +1025,7 @@ body {
 		background-image: -moz-linear-gradient(#373b44, #2c2f36);
 		background-image: -o-linear-gradient(#373b44, #2c2f36);
 		background-image: linear-gradient(#373b44, #2c2f36);
+		display: flex;
 
 		.sidebar-item-control {
 			> * {
