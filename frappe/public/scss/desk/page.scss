@@ -44,7 +44,8 @@
 }
 
 .page-container {
-	background-color: var(--bg-color);
+	// background-color: var(--bg-color);
+	background-color: #30333bb8;
 
 	.page-body.full-width {
 		width: 100%;
@@ -75,7 +76,7 @@
 		min-width: 40px;
 	}
 	.custom-btn-group {
-		display: inline-flex;
+		display: none;
 	}
 
 	.custom-actions {
@@ -153,6 +154,7 @@
 	.dropdown-menu {
 		width: max-content;
 	}
+
 
 	.menu-item-label {
 		margin-right: var(--margin-md);

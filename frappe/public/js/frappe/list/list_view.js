@@ -713,9 +713,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 						<span class="level-item list-header-meta"></span>
 					</div>
 				</div>
-				<div class="level-right">
-					${right}
-				</div>
+				
 			</header>
 		`;
 	}
@@ -735,14 +733,9 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 	get_list_row_html_skeleton(left = "", right = "") {
 		return `
 			<div class="list-row-container" tabindex="1">
-				<div class="level list-row">
-					<div class="level-left">
+				<div class="level-left">
 						${left}
 					</div>
-					<div class="level-right text-muted">
-						${right}
-					</div>
-				</div>
 			</div>
 		`;
 	}
