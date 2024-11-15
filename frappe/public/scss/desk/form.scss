@@ -388,6 +388,22 @@
 }
 
 .form-group {
+	display: flex;
+	align-items: center;
+	margin-bottom: 0 !important;
+
+	.clearfix {
+		width: 30%;
+	}
+
+	.clearfix label {
+		margin-left: 5px;
+	}
+
+	.control-input-wrapper {
+		width: 100%;
+	}
+
 	&.frappe-control:last-child {
 		margin-bottom: 0;
 	}

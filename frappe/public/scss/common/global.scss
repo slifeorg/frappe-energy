@@ -16,6 +16,7 @@ body {
 		margin-bottom: 0;
 	}
 	--checkbox-right-margin: 8px;
+	margin-left: 5px;
 
 	.label-area {
 		@include get_textstyle("sm", "medium");
