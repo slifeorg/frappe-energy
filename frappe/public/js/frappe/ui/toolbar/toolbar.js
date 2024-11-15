@@ -224,8 +224,9 @@ $.extend(frappe.ui.toolbar, {
 		$(document.body).trigger("toggleFullWidth");
 	},
 	set_fullwidth_if_enabled() {
-		let fullwidth = JSON.parse(localStorage.container_fullwidth || "false");
-		$(document.body).toggleClass("full-width", fullwidth);
+		let fullwidth = true; // Force full-width mode to always be true
+		localStorage.container_fullwidth = fullwidth; // Ensure it's saved in localStorage
+		$(document.body).addClass("full-width");
 	},
 	show_shortcuts(e) {
 		e.preventDefault();
