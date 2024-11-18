@@ -1,6 +1,8 @@
 html,
 body {
-	background-color: var(--bg-color);
+	// background-color: var(--bg-color);
+	background-color: #303338;
+
 	::selection {
 		color: var(--neutral-black);
 		background: var(--gray-300);
