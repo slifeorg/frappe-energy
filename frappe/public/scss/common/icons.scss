@@ -15,7 +15,7 @@
 	@extend .icon;
 	// reverse fill and stroke because of the way es icon is drawn
 	fill: var(--icon-stroke);
-	stroke: #f4f4f4;
+	// stroke: #f4f4f4;
 }
 
 /* like icon */

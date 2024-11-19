@@ -100,10 +100,15 @@
 	white-space: nowrap;
 	--icon-stroke: currentColor;
 	--icon-fill-bg: var(--btn-primary);
+	border: 1px solid #8BC34A;
 
 	&:active {
 		color: var(--gray-100) !important;
-		background-color: var(--invert-neutral) !important;
+		background-color: #a8d491 !important;
+	}
+
+	&:hover {
+		background-color: #a8d491;
 	}
 }
 

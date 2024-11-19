@@ -94,12 +94,12 @@ $disabled-input-height: 22px;
 	--awesomplete-hover-bg: var(--control-bg);
 
 	// Button Colors
-	--btn-primary: var(--gray-900);
-	--btn-default-bg: var(--gray-100);
-	--btn-default-hover-bg: var(--gray-300);
+	--btn-primary: none;
+	--btn-default-bg: none;
+	--btn-default-hover-bg: #a8d491;
 
 	// Border Colors
-	--border-primary: var(--gray-900);
+	--border-primary: 1px solid #8BC34A;
 
 	// Other Colors
 	--sidebar-select-color: var(--gray-100);

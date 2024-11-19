@@ -57,7 +57,7 @@
 	.btn {
 		height: var(--btn-height);
 		margin-left: var(--margin-sm, 8px);
-		border-radius: var(--border-radius);
+		border: 1px solid #8BC34A;
 		line-height: 1;
 		padding: 4px 8px;
 		&,
