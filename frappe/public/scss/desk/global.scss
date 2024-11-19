@@ -496,22 +496,24 @@ kbd {
 		&:hover {
 			// background-color: var(--sidebar-select-color);
 			// text-decoration: none;
-			border-top-color: #525866;
+			// border-top-color: #525866;
 			background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #494f5b), color-stop(100%, #353941));
 			background-image: -webkit-linear-gradient(#494f5b, #353941);
 			background-image: -moz-linear-gradient(#494f5b, #353941);
 			background-image: -o-linear-gradient(#494f5b, #353941);
-			background-image: linear-gradient(#494f5b, #353941);
+			// background-image: linear-gradient(#494f5b, #353941);
+			background-color: #a8d491;
 		}
 
 		&.selected {
 			// background-color: var(--sidebar-select-color);
-			border-top-color: #798cb6;
+			// border-top-color: #798cb6;
 			background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #5970a3), color-stop(100%, #394768));
 			background-image: -webkit-linear-gradient(#5970a3, #394768);
 			background-image: -moz-linear-gradient(#5970a3, #394768);
 			background-image: -o-linear-gradient(#5970a3, #394768);
-			background-image: linear-gradient(#5970a3, #394768);
+			// background-image: linear-gradient(#5970a3, #394768);
+			background-color: #a8d491;
 		}
 
 		> a {

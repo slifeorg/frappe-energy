@@ -1,7 +1,7 @@
 html,
 body {
 	// background-color: var(--bg-color);
-	background-color: #f4f4f4;
+	background-color: #009345;
 
 	::selection {
 		color: var(--neutral-black);
@@ -24,11 +24,14 @@ body {
 	}
 
 	.standard-sidebar-section {
-		margin-bottom: var(--margin-xl);
+		// margin-bottom: var(--margin-xl);
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
 
-		&:last-of-type {
-			margin-bottom: var(--margin-sm);
-		}
+		// &:last-of-type {
+		// 	// margin-bottom: var(--margin-sm);
+		// }
 	}
 }
 
@@ -1015,18 +1018,19 @@ body {
 		// justify-content: space-between;
 		// padding: 0px;
 		color: #f4f4f4;
-		font-size: 12px;
-		border-bottom: 1px solid #090a0c;
-		border-top: 1px solid #40454f;
+		font-size: 14px;
+		// border-bottom: 1px solid #090a0c;
+		// border-top: 1px solid #40454f;
+		border: 1px solid #8BC34A;
 		padding: 12px;
 		display: block;
 		text-decoration: none;
-		text-shadow: 0 1px 0 #000;
+		// text-shadow: 0 1px 0 #000;
 		background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #373b44), color-stop(100%, #2c2f36));
 		background-image: -webkit-linear-gradient(#373b44, #2c2f36);
 		background-image: -moz-linear-gradient(#373b44, #2c2f36);
 		background-image: -o-linear-gradient(#373b44, #2c2f36);
-		background-image: linear-gradient(#373b44, #2c2f36);
+		// background-image: linear-gradient(#373b44, #2c2f36);
 		display: flex;
 
 		.sidebar-item-control {
@@ -1063,6 +1067,8 @@ body {
 		.sidebar-item-label {
 			flex: 1;
 			color: #f4f4f4;
+			text-transform: uppercase;
+			font-weight: 700;
 		}
 
 		.item-anchor {
@@ -1148,6 +1154,7 @@ body {
 			.desk-sidebar-item.standard-sidebar-item {
 				&:hover,
 				&.selected {
+					background-color: #a8d491;
 					.drag-handle {
 						// display: inline-block;
 						// background-color: var(--bg-color);
@@ -1156,7 +1163,7 @@ body {
 						background-image: -webkit-linear-gradient(#5970a3, #394768);
 						background-image: -moz-linear-gradient(#5970a3, #394768);
 						background-image: -o-linear-gradient(#5970a3, #394768);
-						background-image: linear-gradient(#5970a3, #394768);
+						// background-image: linear-gradient(#5970a3, #394768);
 					}
 
 					.setting-btn,
@@ -1213,6 +1220,7 @@ body {
 
 				.ce-header b {
 					font-weight: 600 !important;
+					color: #8BC34A;
 				}
 
 				.new-block-button {

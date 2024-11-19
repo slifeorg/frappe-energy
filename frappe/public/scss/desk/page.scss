@@ -33,6 +33,7 @@
 			margin-bottom: 0px;
 			margin-right: var(--margin-sm);
 			max-width: 25vw;
+			color: #8BC34A !important;
 		}
 		.indicator-pill {
 			margin-top: 2px;
@@ -44,7 +45,7 @@
 }
 
 .page-container {
-
+	
 	.page-body.full-width {
 		width: 100%;
 		max-width: 100%;
@@ -101,7 +102,7 @@
 	background: var(--bg-color);
 	margin-bottom: 5px;
 	transition: 0.5s top;
-	background-color: #f4f4f4;
+	background-color: #009345;
 	.page-head-content {
 		height: var(--page-head-height);
 		padding: 8px 0px;
