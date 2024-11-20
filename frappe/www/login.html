@@ -55,11 +55,7 @@
 {% macro logo_section(title=null) %}
 <div class="page-card-head">
 	<img class="app-logo" src="{{ logo }}">
-	{% if title %}
-	<h4>{{ _(title)}}</h4>
-	{% else %}
-	<h4>{{ _('Login to {0}').format(app_name or _("Frappe")) }}</h4>
-	{% endif %}
+	<h4>WELCOME!<br><br> Please sign-in to your account and start the adventure</h4>
 </div>
 {% endmacro %}
 
