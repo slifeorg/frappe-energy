@@ -30,7 +30,7 @@ body {
 		max-width: 400px;
 		margin: 0 auto;
 		border-radius: var(--border-radius-md);
-		border: 1px solid var(--border-color);
+		border: 1px solid #8BC34A;
 
 		form {
 			max-width: 320px;
@@ -118,6 +118,7 @@ body {
 				border: none;
 				display: flex;
 				place-content: center;
+				border: 1px solid #8BC34A;
 
 				&.btn-salesforce {
 					i {
@@ -207,14 +208,14 @@ body {
 	font-weight: 600;
 
 	img {
-		max-height: 42px;
+		max-height: 150px;
 	}
 
 	h4 {
 		margin-top: 1rem;
-		font-size: var(--text-xl);
+		font-size: 14px;
 		font-weight: var(--weight-semibold);
-		letter-spacing: 0.01em;
-		color: var(--text-color);
+		font-family: "Montserrat", Helvetica, Arial, serif;
+		color: #a8d491;
 	}
 }
