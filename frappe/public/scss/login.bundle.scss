@@ -112,13 +112,14 @@ body {
 
 			.btn-login-option {
 				@include get_textstyle("base", "medium");
-				color: var(--text-gray-700);
-				background: var(--gray-100);
+				color: var(--neutral);
+				// background: var(--gray-100);
 				box-shadow: none;
 				border: none;
 				display: flex;
 				place-content: center;
 				border: 1px solid #8BC34A;
+				background-color: #009346;
 
 				&.btn-salesforce {
 					i {
@@ -131,8 +132,7 @@ body {
 				}
 
 				&:hover {
-					border: none;
-					background: var(--gray-300);
+					background-color: #a8d491;
 				}
 			}
 
