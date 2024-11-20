@@ -2,6 +2,11 @@ import os
 
 from . import __version__ as app_version
 
+def get_user_lang(user):
+    return "en"
+
+get_user_lang = "frappe.get_user_lang"
+
 app_name = "frappe"
 app_title = "Frappe Framework"
 app_publisher = "Frappe Technologies"
