@@ -139,7 +139,12 @@ frappe.views.Workspace = class Workspace {
 	sidebar_item_container(item) {
 		item.indicator_color =
 			item.indicator_color || this.indicator_colors[Math.floor(Math.random() * 12)];
-
+	
+		const isNested = !!item.parent_page; // Detect if the item is nested
+		const nestedClass = isNested ? "nested-sidebar-item" : ""; // Add class for nested items
+		const anchorClass = isNested ? "nested-item-anchor" : ""; // Add class for nested anchors
+		const labelClass = isNested ? "nested-sidebar-label" : ""; // Add class for nested labels
+	
 		return $(`
 			<div
 				class="sidebar-item-container ${item.is_editable ? "is-draggable" : ""}"
@@ -148,23 +153,27 @@ frappe.views.Workspace = class Workspace {
 				item-public="${item.public || 0}"
 				item-is-hidden="${item.is_hidden || 0}"
 			>
-				<div class="desk-sidebar-item standard-sidebar-item ${item.selected ? "selected" : ""}">
+				<div class="desk-sidebar-item standard-sidebar-item ${nestedClass} ${item.selected ? "selected" : ""}">
 					<a
 						href="/app/${
 							item.public
 								? frappe.router.slug(item.title)
 								: "private/" + frappe.router.slug(item.title)
 						}"
-						class="item-anchor ${item.is_editable ? "" : "block-click"}" title="${__(item.title)}"
+						class="item-anchor ${anchorClass} ${item.is_editable ? "" : "block-click"}" title="${__(item.title)}"
 					>
-						<span class="sidebar-item-icon" item-icon=${item.icon || "folder-normal"}>
-							${
-								item.public
-									? frappe.utils.icon(item.icon || "folder-normal", "md")
-									: `<span class="indicator ${item.indicator_color}"></span>`
-							}
-						</span>
-						<span class="sidebar-item-label">${__(item.title)}<span>
+						${
+							isNested
+								? '' // Do not include the icon for nested items
+								: `<span class="sidebar-item-icon" item-icon=${item.icon || "folder-normal"}>
+										${
+											item.public
+												? frappe.utils.icon(item.icon || "folder-normal", "md")
+												: `<span class="indicator ${item.indicator_color}"></span>`
+										}
+								   </span>`
+						}
+						<span class="sidebar-item-label ${labelClass}">${__(item.title)}</span>
 					</a>
 					<div class="sidebar-item-control"></div>
 				</div>
@@ -172,6 +181,9 @@ frappe.views.Workspace = class Workspace {
 			</div>
 		`);
 	}
+	
+	
+	
 
 	make_sidebar() {
 		if (this.sidebar.find(".standard-sidebar-section")[0]) {

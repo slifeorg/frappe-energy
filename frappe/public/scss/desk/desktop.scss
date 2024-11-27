@@ -17,6 +17,7 @@ body {
 		text-transform: uppercase;
 		cursor: pointer;
 		margin-bottom: var(--margin-xs) !important;
+		display: none;
 
 		span {
 			pointer-events: none;
@@ -27,7 +28,7 @@ body {
 		// margin-bottom: var(--margin-xl);
 		display: flex;
 		flex-direction: column;
-		row-gap: 10px;
+		row-gap: 7px;
 
 		// &:last-of-type {
 		// 	// margin-bottom: var(--margin-sm);
@@ -1018,23 +1019,35 @@ body {
 	}
 
 	.standard-sidebar-item {
-		// justify-content: space-between;
-		// padding: 0px;
 		color: #f4f4f4;
 		font-size: 14px;
-		// border-bottom: 1px solid #090a0c;
-		// border-top: 1px solid #40454f;
 		border: 1px solid #8BC34A;
-		padding: 8px;
+		height: 70px;
 		display: block;
 		text-decoration: none;
-		// text-shadow: 0 1px 0 #000;
 		background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #373b44), color-stop(100%, #2c2f36));
 		background-image: -webkit-linear-gradient(#373b44, #2c2f36);
 		background-image: -moz-linear-gradient(#373b44, #2c2f36);
 		background-image: -o-linear-gradient(#373b44, #2c2f36);
-		// background-image: linear-gradient(#373b44, #2c2f36);
 		display: flex;
+
+		&:focus-within {
+			background-color: #a8d491;
+		}
+
+		.nested-sidebar-label {
+			display: flex;          /* Use flexbox for alignment */
+			align-items: center;    /* Vertically center the text */
+			justify-content: center; /* Horizontally center the text */
+			text-align: center;     /* Center text inside the element */
+			width: 100%;            /* Ensure the label spans the full width */
+			height: 100%;           /* Match the height of the container */
+		}
+
+		.nested-item-anchor {
+			padding: 0 !important;
+		}
+
 
 		.sidebar-item-control {
 			> * {
@@ -1084,7 +1097,7 @@ body {
 
 	.sidebar-item-container {
 		position: relative;
-		margin-left: -10px;
+		// margin-left: -10px;
 
 		&[item-is-hidden="1"] {
 			display: none;
@@ -1096,22 +1109,21 @@ body {
 		}
 
 		.sidebar-item-container {
-			margin-left: 10px;
+			// margin-left: 10px;
 
 			// Nested items
 			.standard-sidebar-item {
 				// justify-content: start;
 				text-decoration: none;
-				// border-top: 1px solid #f6f6f6;
-				// border-bottom: 1px solid #c9c9c9;
+				background-color: #8BC34A45;
 				font-size: 12px;
 				color: #555;
 				display: block;
-				// background: #eee;
 				padding: 5px 15px;
-				// text-shadow: 0 1px 0 #fff;
 				white-space: nowrap;
-
+				height: 27px;
+				border-radius: 0;
+				border: none;
 			}
 		}
 
