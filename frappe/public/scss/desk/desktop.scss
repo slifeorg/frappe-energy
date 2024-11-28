@@ -13,11 +13,11 @@ body {
 	@extend .standard-sidebar;
 
 	.standard-sidebar-label {
-		font-size: var(--text-xs);
 		text-transform: uppercase;
 		cursor: pointer;
 		margin-bottom: var(--margin-xs) !important;
 		display: none;
+		font-size: 15px;
 
 		span {
 			pointer-events: none;
@@ -1084,7 +1084,7 @@ body {
 			flex: 1;
 			color: #f4f4f4;
 			text-transform: uppercase;
-			font-weight: 700;
+			font-weight: 400;
 		}
 
 		.item-anchor {
@@ -1116,7 +1116,7 @@ body {
 				// justify-content: start;
 				text-decoration: none;
 				background-color: #8BC34A45;
-				font-size: 12px;
+				font-size: 16px;
 				color: #555;
 				display: block;
 				padding: 5px 15px;

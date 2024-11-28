@@ -70,7 +70,7 @@ html[data-theme="dark"] .list-row-container:nth-child(odd) {
 	// padding: 0 var(--padding-xs);
 
 	&:nth-child(odd) {
-		background-color: #EEEEEE;
+		background-color: #89E98659;
 	}
 
 	&:focus {
@@ -91,13 +91,13 @@ html[data-theme="dark"] .list-row-container:nth-child(odd) {
 
 .list-row {
 	padding: 15px 0px 15px 0px;
-	height: 60px;
+	height: 52px;
 	cursor: pointer;
 	transition: color 0.2s;
 	-webkit-transition: color 0.2s;
 	@include get_textstyle("base", "regular");
 	// border-radius: var(--border-radius-md);
-	margin-top: -1px;
+
 
 
 	&:hover:not(.list-row-head) {
@@ -182,17 +182,18 @@ html[data-theme="dark"] .list-row-container:nth-child(odd) {
 .list-row-head {
 	@extend .list-row;
 	cursor: default;
-	background-color: var(--subtle-fg);
+	// background-color: var(--subtle-fg);
 	// height: 30px;
 	// margin: 0.5rem var(--padding-xs);
 	// border-radius: var(--border-radius-md);
-	border: 1px solid #bbb;
 	text-align: center;
+	font-weight: 700;
+	color: #000000;
 	
 
-	.list-check-all {
-		margin-left: 11px;
-	}
+	// .list-check-all {
+	// 	// margin-left: 11px;
+	// }
 	.list-subject {
 		font-weight: normal;
 	}
@@ -208,10 +209,21 @@ html[data-theme="dark"] .list-row-container:nth-child(odd) {
 	justify-content: center;
 	align-items: center;
 	flex: 1;
-	border: 1px solid #bbb;
-	min-height: 60px;
+	border: 1px solid #000000;
+	min-height: 54px;
 	margin-left: -1px;
 	overflow: hidden;
+
+	&.list-subject {
+		&.level {
+		  span {
+			&[data-sort-by="subject"] {
+			  font-weight: 700;
+			  color: #000000;
+			}
+		  }
+		}
+	  }
 
 	&:first-of-type span:last-child {
 		white-space: nowrap;
@@ -238,9 +250,11 @@ $level-margin-right: 8px;
 .list-subject {
 	flex: 2;
 	justify-content: start;
+	padding-left: 10px;
 
 	a {
 		color: var(--text-color);
+		font-weight: 400;
 	}
 
 	&.seen {
@@ -292,9 +306,9 @@ input.list-row-checkbox {
 	background-color: var(--card-bg);
 }
 
-input.list-check-all {
-	margin-left: 15px;
-}
+// input.list-check-all {
+// 	// margin-left: 15px;
+// }
 
 .render-list-checkbox {
 	margin-left: 15px;

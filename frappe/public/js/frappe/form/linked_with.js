@@ -40,7 +40,7 @@ frappe.ui.form.LinkedWith = class LinkedWith {
 		let html = "";
 		const linked_docs = this.frm.__linked_docs;
 		const linked_doctypes = Object.keys(linked_docs);
-
+	
 		if (linked_doctypes.length === 0) {
 			html = __("Not Linked to any record");
 		} else {
@@ -48,18 +48,22 @@ frappe.ui.form.LinkedWith = class LinkedWith {
 				.map((doctype) => {
 					const docs = linked_docs[doctype];
 					return `
-					<div class="list-item-table margin-bottom">
-						${this.make_doc_head(doctype)}
-						${docs.map((doc) => this.make_doc_row(doc, doctype)).join("")}
-					</div>
-				`;
+						<div class="list-item-table margin-bottom">
+							${this.make_doc_head(doctype)}
+							${docs
+								.map((doc, index) =>
+									this.make_doc_row(doc, doctype, index === docs.length - 1) // Pass a flag for the last row
+								)
+								.join("")}
+						</div>
+					`;
 				})
 				.join("");
 		}
-
+	
 		$(this.dialog.body).html(html);
 	}
-
+	
 	make_doc_head(heading) {
 		return `
 			<header class="level list-row list-row-head text-muted small">
@@ -67,14 +71,15 @@ frappe.ui.form.LinkedWith = class LinkedWith {
 			</header>
 		`;
 	}
-
-	make_doc_row(doc, doctype) {
-		return `<div class="list-row-container">
+	
+	make_doc_row(doc, doctype, is_last_row) {
+		const last_row_class = is_last_row ? "custom-last-row" : ""; // Add custom class if it’s the last row
+		return `<div class="list-row-container ${last_row_class}">
 			<div class="level list-row small">
 				<div class="level-left bold">
 					<a href="/app/${frappe.router.slug(doctype)}/${doc.name}">${doc.name}</a>
 				</div>
 			</div>
 		</div>`;
-	}
+	}	
 };
