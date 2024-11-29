@@ -818,9 +818,13 @@
       </g>
     </symbol>
     <symbol id="es-line-up" fill="none" viewBox="0 0 16 16">
-      <g class="es-line-up">
-        <path fill="var(--icon-stroke)" fill-rule="evenodd" d="M13.354 10.854a.5.5 0 0 1-.708 0L8 6.207l-4.646 4.647a.5.5 0 0 1-.708-.708l5-5a.5.5 0 0 1 .708 0l5 5a.5.5 0 0 1 0 .708Z" class="Union" clip-rule="evenodd"/>
-      </g>
+      <path
+        d="M15.3846 14.3334H0.6154
+          M12.9231 7.6667H3.0769
+          M9.6462 1.0000H6.3589"
+        stroke-width="1"
+        stroke-linecap="round"
+      />
     </symbol>
     <symbol id="es-line-right-chevron" fill="none" viewBox="0 0 16 16">
       <g class="es-line-right-chevron">
@@ -833,9 +837,12 @@
       </g>
     </symbol>
     <symbol id="es-line-down" fill="none" viewBox="0 0 16 16">
-      <g class="es-line-down">
-        <path fill="var(--icon-stroke)" fill-rule="evenodd" d="M2.646 5.686a.5.5 0 0 1 .708 0L8 10.333l4.646-4.647a.5.5 0 0 1 .708.708l-5 5a.5.5 0 0 1-.708 0l-5-5a.5.5 0 0 1 0-.708Z" class="Union" clip-rule="evenodd"/>
-      </g>
+      <path
+        d="M2 4.66667H14 M4 8H12 M6.66667 11.33333H9.33333"
+        stroke="var(--icon-stroke)"
+        stroke-width="1"
+        stroke-linecap="round"
+      />
     </symbol>
     <symbol id="es-line-add" fill="none" viewBox="0 0 16 16">
       <g class="es-line-add">

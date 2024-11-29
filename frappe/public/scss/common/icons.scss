@@ -16,7 +16,17 @@
 	// reverse fill and stroke because of the way es icon is drawn
 	fill: var(--icon-stroke);
 	// stroke: #f4f4f4;
+
+	&.drop-down {
+		stroke: white;
+		fill: white;
+		transition: transform 0.3s ease;
+	}
 }
+
+.sidebar-child-item.hidden .drop-down {
+	transform: rotate(180deg);
+  }
 
 /* like icon */
 use.like-icon {

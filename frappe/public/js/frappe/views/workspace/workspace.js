@@ -298,30 +298,50 @@ frappe.views.Workspace = class Workspace {
 	add_drop_icon(item, sidebar_control, item_container) {
 		let drop_icon = "es-line-down";
 		if (item_container.find(`[item-name="${this.current_page.name}"]`).length) {
-			drop_icon = "small-up";
+		  drop_icon = "small-up";
 		}
-
+	  
 		let $child_item_section = item_container.find(".sidebar-child-item");
+	  
+		// Generate the icon HTML
+		let icon_html = frappe.utils.icon(drop_icon, "sm");
+	  
+		// Convert the icon HTML to a jQuery object
+		let $icon = $(icon_html);
+	  
+		// Add the custom class "drop-down" to the SVG element
+		$icon.addClass("drop-down");
+	  
+		// Create the button and insert the modified icon
 		let $drop_icon = $(`<button class="btn-reset drop-icon hidden">`)
-			.html(frappe.utils.icon(drop_icon, "sm"))
-			.appendTo(sidebar_control);
+		  .html($icon)
+		  .appendTo(sidebar_control);
+	  
 		let pages = item.public ? this.public_pages : this.private_pages;
 		if (
-			pages.some(
-				(e) => e.parent_page == item.title && (e.is_hidden == 0 || !this.is_read_only)
-			)
+		  pages.some(
+			(e) => e.parent_page == item.title && (e.is_hidden == 0 || !this.is_read_only)
+		  )
 		) {
-			$drop_icon.removeClass("hidden");
+		  $drop_icon.removeClass("hidden");
 		}
+	  
 		$drop_icon.on("click", () => {
-			let icon =
-				$drop_icon.find("use").attr("href") === "#es-line-down"
-					? "#es-line-up"
-					: "#es-line-down";
-			$drop_icon.find("use").attr("href", icon);
-			$child_item_section.toggleClass("hidden");
+		  let $icon = $drop_icon.find("svg");
+	  
+		  // Toggle between #es-line-down and #es-line-up
+		  let icon_href = $icon.find("use").attr("href");
+		  let new_icon = icon_href === "#es-line-down" ? "#es-line-up" : "#es-line-down";
+		  $icon.find("use").attr("href", new_icon);
+	  
+		  // Ensure the custom class "drop-down" persists on the SVG element
+		  $icon.addClass("drop-down");
+	  
+		  $child_item_section.toggleClass("hidden");
 		});
-	}
+	  }
+	  
+	  
 
 	show() {
 		if (!this.all_pages) {
