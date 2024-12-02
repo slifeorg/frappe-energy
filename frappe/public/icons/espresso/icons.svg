@@ -838,8 +838,9 @@
     </symbol>
     <symbol id="es-line-down" fill="none" viewBox="0 0 16 16">
       <path
-        d="M2 4.66667H14 M4 8H12 M6.66667 11.33333H9.33333"
-        stroke="var(--icon-stroke)"
+        d="M15.3846 14.3334H0.6154
+          M12.9231 7.6667H3.0769
+          M9.6462 1.0000H6.3589"
         stroke-width="1"
         stroke-linecap="round"
       />

@@ -1093,6 +1093,10 @@ body {
 			padding: 3px 0px 3px 8px;
 			flex: 1;
 		}
+		
+		.sidebar-item-icon {
+			// display: none;
+		}
 	}
 
 	.sidebar-item-container {
@@ -1110,6 +1114,12 @@ body {
 
 		.sidebar-item-container {
 			// margin-left: 10px;
+			&:hover {
+				background-color: #a8d491;
+			}
+			&:active {
+				background-color: #a8d491;
+			}
 
 			// Nested items
 			.standard-sidebar-item {
@@ -1118,13 +1128,14 @@ body {
 				background-color: #8BC34A45;
 				font-size: 16px;
 				color: #555;
-				display: block;
-				padding: 5px 15px;
+				// display: block;
+				// padding: 5px 15px;
 				white-space: nowrap;
 				height: 27px;
-				border-radius: 0;
+				border-radius: 10px;
 				border: none;
 			}
+			
 		}
 
 		.indicator {
