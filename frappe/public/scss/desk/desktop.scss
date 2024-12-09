@@ -1049,6 +1049,7 @@ body {
 		}
 
 
+
 		.sidebar-item-control {
 			> * {
 				align-self: center;
@@ -1114,12 +1115,6 @@ body {
 
 		.sidebar-item-container {
 			// margin-left: 10px;
-			&:hover {
-				background-color: #a8d491;
-			}
-			&:active {
-				background-color: #a8d491;
-			}
 
 			// Nested items
 			.standard-sidebar-item {
@@ -1134,6 +1129,13 @@ body {
 				height: 27px;
 				border-radius: 10px;
 				border: none;
+
+				&:hover {
+					background-color: #a8d491;
+				}
+				&:active {
+					background-color: #a8d491;
+				}
 			}
 			
 		}
