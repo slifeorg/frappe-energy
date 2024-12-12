@@ -374,25 +374,95 @@ frappe.views.Workspace = class Workspace {
 			let $sidebar = this.sidebar_items[section][page.name];
 			let pages = page.public ? this.public_pages : this.private_pages;
 			let sidebar_page = pages.find((p) => p.title == page.name);
-
+	
 			if (add) {
 				$sidebar[0].firstElementChild.classList.add("selected");
 				if (sidebar_page) sidebar_page.selected = true;
-
-				// open child sidebar section if closed
+	
+				// Open child sidebar section if closed
 				$sidebar.parent().hasClass("sidebar-child-item") &&
 					$sidebar.parent().hasClass("hidden") &&
 					$sidebar.parent().removeClass("hidden");
-
+	
 				this.current_page = { name: page.name, public: page.public };
 				localStorage.current_page = page.name;
 				localStorage.is_current_page_public = page.public;
+	
+				// Reorder sidebar items
+				this.reorder_sidebar(section);
 			} else {
 				$sidebar[0].firstElementChild.classList.remove("selected");
 				if (sidebar_page) sidebar_page.selected = false;
 			}
 		}
 	}
+	
+	reorder_sidebar(section) {
+		const desiredOrder = {
+			"PERMITS": ["NEW", "PENDING", "NEED ATTENTION", "SCHEDULED", "COMPLETED"],
+			"HERS TESTS": ["ㅤNEWㅤ", "ㅤPENDINGㅤ", "ㅤHERS ONLYㅤ", "ㅤNEEDS ATTENTIONㅤ", "ㅤSCHEDULEDㅤ", "ㅤRESCHEDULEDㅤ", "ㅤFAILEDㅤ", "ㅤCOMPLETEDㅤ"],
+			"AIR BALANCE": ["ㅤㅤNEWㅤㅤ", "ㅤㅤPENDINGㅤㅤ", "ㅤㅤNEEDS ATTENTIONㅤㅤ", "ㅤㅤSCHEDULEDㅤㅤ", "ㅤㅤRESCHEDULEDㅤㅤ", "ㅤㅤFAILEDㅤㅤ", "ㅤㅤCOMPLETEDㅤㅤ"],
+			"TITLE 24": ["ㅤㅤㅤNEWㅤㅤㅤ", "ㅤㅤㅤPENDINGㅤㅤㅤ", "ㅤㅤㅤNEEDS ATTENTIONㅤㅤㅤ", "ㅤㅤㅤSCHEDULEDㅤㅤㅤ", "ㅤㅤㅤRESCHEDULEDㅤㅤㅤ", "ㅤㅤㅤFAILEDㅤㅤㅤ", "ㅤㅤㅤCOMPLETEDㅤㅤㅤ"],
+			"CF1R": ["ㅤㅤㅤㅤNEWㅤㅤㅤㅤ", "ㅤㅤㅤㅤPENDINGㅤㅤㅤㅤ", "ㅤㅤㅤㅤNEEDS ATTENTIONㅤㅤㅤㅤ", "ㅤㅤㅤㅤCOMPLETEDㅤㅤㅤㅤ"],
+		};
+	
+		const topLevelOrder = [
+			"DASHBOARDㅤ",
+			"CREATE A JOB",
+			"CF1R",
+			"PERMITS",
+			"HERS TESTS",
+			"AIR BALANCE",
+			"TITLE 24",
+			"COMPANYㅤ",
+			"STANDARD SEARCH",
+			"ADVANCED SEARCH",
+		];
+	
+		// Get the section container
+		const sidebarSection = this.sidebar.find(
+			`.standard-sidebar-section[data-title="${section.charAt(0).toUpperCase() + section.slice(1)}"]`
+		);
+	
+		if (!sidebarSection.length) return;
+	
+		// Get all sidebar items
+		const sidebarItems = Array.from(sidebarSection.find(".sidebar-item-container"));
+	
+		// Create a map of items by their `item-name`
+		const itemMap = new Map();
+		sidebarItems.forEach((item) => {
+			const itemName = item.getAttribute("item-name").toUpperCase();
+			itemMap.set(itemName, item);
+		});
+	
+		// Reorder top-level items based on topLevelOrder
+		topLevelOrder.forEach((name) => {
+			const item = itemMap.get(name);
+			if (item) {
+				sidebarSection.append(item); // Re-append item to apply order
+	
+				// Check if the item has nested elements (child items)
+				const nestedContainer = item.querySelector(".sidebar-child-item");
+				if (nestedContainer && desiredOrder[name]) {
+					// Reorder nested elements inside this top-level item
+					const nestedItems = Array.from(nestedContainer.children);
+					const nestedMap = new Map();
+					nestedItems.forEach((nestedItem) => {
+						const nestedName = nestedItem.getAttribute("item-name").toUpperCase();
+						nestedMap.set(nestedName, nestedItem);
+					});
+	
+					desiredOrder[name].forEach((nestedName) => {
+						const nestedItem = nestedMap.get(nestedName);
+						if (nestedItem) {
+							nestedContainer.appendChild(nestedItem);
+						}
+					});
+				}
+			}
+		});
+	}	
 
 	get_data(page) {
 		return frappe
