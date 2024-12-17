@@ -399,7 +399,7 @@ frappe.views.Workspace = class Workspace {
 	
 	reorder_sidebar(section) {
 		const desiredOrder = {
-			"PERMITS": ["NEW", "PENDING", "NEED ATTENTION", "SCHEDULED", "COMPLETED"],
+			"PERMITS": ["NEW", "PENDING", "NEEDS ATTENTION", "SCHEDULED", "COMPLETED"],
 			"HERS TESTS": ["ㅤNEWㅤ", "ㅤPENDINGㅤ", "ㅤHERS ONLYㅤ", "ㅤNEEDS ATTENTIONㅤ", "ㅤSCHEDULEDㅤ", "ㅤRESCHEDULEDㅤ", "ㅤFAILEDㅤ", "ㅤCOMPLETEDㅤ"],
 			"AIR BALANCE": ["ㅤㅤNEWㅤㅤ", "ㅤㅤPENDINGㅤㅤ", "ㅤㅤNEEDS ATTENTIONㅤㅤ", "ㅤㅤSCHEDULEDㅤㅤ", "ㅤㅤRESCHEDULEDㅤㅤ", "ㅤㅤFAILEDㅤㅤ", "ㅤㅤCOMPLETEDㅤㅤ"],
 			"TITLE 24": ["ㅤㅤㅤNEWㅤㅤㅤ", "ㅤㅤㅤPENDINGㅤㅤㅤ", "ㅤㅤㅤNEEDS ATTENTIONㅤㅤㅤ", "ㅤㅤㅤSCHEDULEDㅤㅤㅤ", "ㅤㅤㅤRESCHEDULEDㅤㅤㅤ", "ㅤㅤㅤFAILEDㅤㅤㅤ", "ㅤㅤㅤCOMPLETEDㅤㅤㅤ"],
