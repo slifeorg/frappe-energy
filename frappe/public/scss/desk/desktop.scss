@@ -1022,7 +1022,6 @@ body {
 		color: #f4f4f4;
 		font-size: 14px;
 		border: 1px solid #8BC34A;
-		height: 70px;
 		display: block;
 		text-decoration: none;
 		background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #373b44), color-stop(100%, #2c2f36));
@@ -1030,9 +1029,17 @@ body {
 		background-image: -moz-linear-gradient(#373b44, #2c2f36);
 		background-image: -o-linear-gradient(#373b44, #2c2f36);
 		display: flex;
+		height: 46px;
+		background-color: #009345;
+		border-radius: 4px;
+		margin-bottom: 0.5rem;
 
 		&:focus-within {
 			background-color: #a8d491;
+		}
+		&:hover,
+		&.selected {
+		  background-color: #8bc34a;
 		}
 
 		.nested-sidebar-label {
@@ -1056,6 +1063,9 @@ body {
 				margin-left: 3px;
 				box-shadow: none;
 			}
+			&.drop-down {
+				transform: rotate(180deg);
+			  }
 
 			.drag-handle {
 				cursor: all-scroll;
@@ -1069,7 +1079,9 @@ body {
 			}
 
 			.drop-icon {
-				padding: 0px 12px 0px 2px;
+				padding: 0;
+				transform: rotate(0deg);
+				transition: transform 0.3s ease;
 			}
 
 			svg {
@@ -1091,10 +1103,9 @@ body {
 		.item-anchor {
 			display: flex;
 			overflow: hidden;
-			padding: 3px 0px 3px 8px;
 			flex: 1;
 		}
-		
+
 		.sidebar-item-icon {
 			// display: none;
 		}
@@ -1120,14 +1131,15 @@ body {
 			.standard-sidebar-item {
 				// justify-content: start;
 				text-decoration: none;
-				background-color: #8BC34A45;
 				font-size: 16px;
 				color: #555;
 				// display: block;
 				// padding: 5px 15px;
+				border-radius: 4px;
+      			margin-bottom: 5px;
+      			background-color: #079e4e;
 				white-space: nowrap;
 				height: 27px;
-				border-radius: 10px;
 				border: none;
 
 				&:hover {
@@ -1137,7 +1149,7 @@ body {
 					background-color: #a8d491;
 				}
 			}
-			
+
 		}
 
 		.indicator {
@@ -1618,3 +1630,6 @@ body {
 		margin-right: 5px;
 	}
 }
+.item-anchor {
+	padding: 0;
+  }
