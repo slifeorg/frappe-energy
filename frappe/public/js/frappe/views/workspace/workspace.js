@@ -139,12 +139,12 @@ frappe.views.Workspace = class Workspace {
 	sidebar_item_container(item) {
 		item.indicator_color =
 			item.indicator_color || this.indicator_colors[Math.floor(Math.random() * 12)];
-	
+
 		const isNested = !!item.parent_page; // Detect if the item is nested
 		const nestedClass = isNested ? "nested-sidebar-item" : ""; // Add class for nested items
 		const anchorClass = isNested ? "nested-item-anchor" : ""; // Add class for nested anchors
 		const labelClass = isNested ? "nested-sidebar-label" : ""; // Add class for nested labels
-	
+
 		return $(`
 			<div
 				class="sidebar-item-container ${item.is_editable ? "is-draggable" : ""}"
@@ -181,9 +181,9 @@ frappe.views.Workspace = class Workspace {
 			</div>
 		`);
 	}
-	
-	
-	
+
+
+
 
 	make_sidebar() {
 		if (this.sidebar.find(".standard-sidebar-section")[0]) {
@@ -300,23 +300,23 @@ frappe.views.Workspace = class Workspace {
 		if (item_container.find(`[item-name="${this.current_page.name}"]`).length) {
 		  drop_icon = "small-up";
 		}
-	  
+
 		let $child_item_section = item_container.find(".sidebar-child-item");
-	  
+
 		// Generate the icon HTML
 		let icon_html = frappe.utils.icon(drop_icon, "sm");
-	  
+
 		// Convert the icon HTML to a jQuery object
 		let $icon = $(icon_html);
-	  
+
 		// Add the custom class "drop-down" to the SVG element
 		$icon.addClass("drop-down");
-	  
+
 		// Create the button and insert the modified icon
 		let $drop_icon = $(`<button class="btn-reset drop-icon hidden">`)
 		  .html($icon)
 		  .appendTo(sidebar_control);
-	  
+
 		let pages = item.public ? this.public_pages : this.private_pages;
 		if (
 		  pages.some(
@@ -325,23 +325,23 @@ frappe.views.Workspace = class Workspace {
 		) {
 		  $drop_icon.removeClass("hidden");
 		}
-	  
+
 		$drop_icon.on("click", () => {
 		  let $icon = $drop_icon.find("svg");
-	  
+
 		  // Toggle between #es-line-down and #es-line-up
 		  let icon_href = $icon.find("use").attr("href");
 		  let new_icon = icon_href === "#es-line-down" ? "#es-line-up" : "#es-line-down";
 		  $icon.find("use").attr("href", new_icon);
-	  
+
 		  // Ensure the custom class "drop-down" persists on the SVG element
 		  $icon.addClass("drop-down");
-	  
+
 		  $child_item_section.toggleClass("hidden");
 		});
 	  }
-	  
-	  
+
+
 
 	show() {
 		if (!this.all_pages) {
@@ -374,20 +374,20 @@ frappe.views.Workspace = class Workspace {
 			let $sidebar = this.sidebar_items[section][page.name];
 			let pages = page.public ? this.public_pages : this.private_pages;
 			let sidebar_page = pages.find((p) => p.title == page.name);
-	
+
 			if (add) {
 				$sidebar[0].firstElementChild.classList.add("selected");
 				if (sidebar_page) sidebar_page.selected = true;
-	
+
 				// Open child sidebar section if closed
 				$sidebar.parent().hasClass("sidebar-child-item") &&
 					$sidebar.parent().hasClass("hidden") &&
 					$sidebar.parent().removeClass("hidden");
-	
+
 				this.current_page = { name: page.name, public: page.public };
 				localStorage.current_page = page.name;
 				localStorage.is_current_page_public = page.public;
-	
+
 				// Reorder sidebar items
 				this.reorder_sidebar(section);
 			} else {
@@ -396,7 +396,7 @@ frappe.views.Workspace = class Workspace {
 			}
 		}
 	}
-	
+
 	reorder_sidebar(section) {
 		const desiredOrder = {
 			"PERMITS": ["NEW", "PENDING", "NEEDS ATTENTION", "SCHEDULED", "COMPLETED"],
@@ -405,7 +405,7 @@ frappe.views.Workspace = class Workspace {
 			"TITLE 24": ["ㅤㅤㅤNEWㅤㅤㅤ", "ㅤㅤㅤPENDINGㅤㅤㅤ", "ㅤㅤㅤNEEDS ATTENTIONㅤㅤㅤ", "ㅤㅤㅤSCHEDULEDㅤㅤㅤ", "ㅤㅤㅤRESCHEDULEDㅤㅤㅤ", "ㅤㅤㅤFAILEDㅤㅤㅤ", "ㅤㅤㅤCOMPLETEDㅤㅤㅤ"],
 			"CF1R": ["ㅤㅤㅤㅤNEWㅤㅤㅤㅤ", "ㅤㅤㅤㅤPENDINGㅤㅤㅤㅤ", "ㅤㅤㅤㅤNEEDS ATTENTIONㅤㅤㅤㅤ", "ㅤㅤㅤㅤCOMPLETEDㅤㅤㅤㅤ"],
 		};
-	
+
 		const topLevelOrder = [
 			"DASHBOARDㅤ",
 			"CREATE A JOB",
@@ -415,33 +415,34 @@ frappe.views.Workspace = class Workspace {
 			"AIR BALANCE",
 			"TITLE 24",
 			"COMPANYㅤ",
+			"COMPANIES",
 			"STANDARD SEARCH",
 			"ADVANCED SEARCH",
 		];
-	
+
 		// Get the section container
 		const sidebarSection = this.sidebar.find(
 			`.standard-sidebar-section[data-title="${section.charAt(0).toUpperCase() + section.slice(1)}"]`
 		);
-	
+
 		if (!sidebarSection.length) return;
-	
+
 		// Get all sidebar items
 		const sidebarItems = Array.from(sidebarSection.find(".sidebar-item-container"));
-	
+
 		// Create a map of items by their `item-name`
 		const itemMap = new Map();
 		sidebarItems.forEach((item) => {
 			const itemName = item.getAttribute("item-name").toUpperCase();
 			itemMap.set(itemName, item);
 		});
-	
+
 		// Reorder top-level items based on topLevelOrder
 		topLevelOrder.forEach((name) => {
 			const item = itemMap.get(name);
 			if (item) {
 				sidebarSection.append(item); // Re-append item to apply order
-	
+
 				// Check if the item has nested elements (child items)
 				const nestedContainer = item.querySelector(".sidebar-child-item");
 				if (nestedContainer && desiredOrder[name]) {
@@ -452,7 +453,7 @@ frappe.views.Workspace = class Workspace {
 						const nestedName = nestedItem.getAttribute("item-name").toUpperCase();
 						nestedMap.set(nestedName, nestedItem);
 					});
-	
+
 					desiredOrder[name].forEach((nestedName) => {
 						const nestedItem = nestedMap.get(nestedName);
 						if (nestedItem) {
@@ -462,7 +463,7 @@ frappe.views.Workspace = class Workspace {
 				}
 			}
 		});
-	}	
+	}
 
 	get_data(page) {
 		return frappe
