@@ -1,12 +1,12 @@
 html,
 body {
 	// background-color: var(--bg-color);
-	background-color: #009345;
+	background-color: #E9E9E9;
 
 	::selection {
 		color: var(--neutral-black);
 		background: var(--gray-300);
-	}
+	} 
 }
 
 .desk-sidebar {
@@ -25,14 +25,8 @@ body {
 	}
 
 	.standard-sidebar-section {
-		// margin-bottom: var(--margin-xl);
 		display: flex;
 		flex-direction: column;
-		row-gap: 7px;
-
-		// &:last-of-type {
-		// 	// margin-bottom: var(--margin-sm);
-		// }
 	}
 }
 
@@ -948,7 +942,6 @@ body {
 			.layout-main-section-wrapper {
 				height: 100%;
 				overflow-y: auto;
-				// scrollbar-color: var(--gray-200) transparent;
 				scrollbar-width: none;
 				[data-theme="dark"] & {
 					scrollbar-color: var(--gray-800) transparent;
@@ -967,8 +960,8 @@ body {
 				}
 			}
 
-			.layout-side-section {
-				padding-right: 15px;
+			.layout-side-section{
+				padding-right: 0px;
 			}
 
 			.layout-main-section {
@@ -1019,27 +1012,24 @@ body {
 	}
 
 	.standard-sidebar-item {
-		color: #f4f4f4;
-		font-size: 14px;
-		border: 1px solid #8BC34A;
-		display: block;
-		text-decoration: none;
-		background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #373b44), color-stop(100%, #2c2f36));
-		background-image: -webkit-linear-gradient(#373b44, #2c2f36);
-		background-image: -moz-linear-gradient(#373b44, #2c2f36);
-		background-image: -o-linear-gradient(#373b44, #2c2f36);
-		display: flex;
-		height: 46px;
-		background-color: #009345;
-		border-radius: 4px;
-		margin-bottom: 0.5rem;
+		display: flex;		
+		justify-content: space-between;
+		align-items: center;
+		border: 1px solid #CCCCCC; 	
+		background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 50.32%, #E5E5E5 100%);
+		padding: 10px;
+		margin: 0;
+		border-radius: 0;
 
-		&:focus-within {
-			background-color: #a8d491;
-		}
 		&:hover,
 		&.selected {
-		  background-color: #8bc34a;
+			background: linear-gradient(180deg, #00CB5F 0%, #009345 50%, #015D2C 100%);
+			border: 1px solid var(--but_pr_stroke, #016530);
+			color: #fff;
+			.sidebar-item-label,
+			.sidebar-item-icon svg {
+				stroke: currentColor;
+			}
 		}
 
 		.nested-sidebar-label {
@@ -1082,6 +1072,10 @@ body {
 				padding: 0;
 				transform: rotate(0deg);
 				transition: transform 0.3s ease;
+				color:inherit;
+				svg{
+					stroke: currentColor;
+				}
 			}
 
 			svg {
@@ -1095,25 +1089,25 @@ body {
 
 		.sidebar-item-label {
 			flex: 1;
-			color: #f4f4f4;
 			text-transform: uppercase;
-			font-weight: 400;
+			font-weight: 500;
+			color: inherit;
+		}
+		.sidebar-item-label,
+		.sidebar-item-icon svg {
+			stroke: #009345;
 		}
 
 		.item-anchor {
 			display: flex;
 			overflow: hidden;
 			flex: 1;
-		}
-
-		.sidebar-item-icon {
-			// display: none;
+			color: inherit;
 		}
 	}
 
 	.sidebar-item-container {
 		position: relative;
-		// margin-left: -10px;
 
 		&[item-is-hidden="1"] {
 			display: none;
@@ -1122,34 +1116,6 @@ body {
 			&:hover {
 				opacity: 1;
 			}
-		}
-
-		.sidebar-item-container {
-			// margin-left: 10px;
-
-			// Nested items
-			.standard-sidebar-item {
-				// justify-content: start;
-				text-decoration: none;
-				font-size: 16px;
-				color: #555;
-				// display: block;
-				// padding: 5px 15px;
-				border-radius: 4px;
-      			margin-bottom: 5px;
-      			background-color: #079e4e;
-				white-space: nowrap;
-				height: 27px;
-				border: none;
-
-				&:hover {
-					background-color: #a8d491;
-				}
-				&:active {
-					background-color: #a8d491;
-				}
-			}
-
 		}
 
 		.indicator {
@@ -1187,11 +1153,32 @@ body {
 			}
 		}
 
+		.standard-sidebar-section {
+		.sidebar-item-container:first-of-type .standard-sidebar-item {
+			border-top-left-radius: 8px;
+			border-top-right-radius: 8px;
+		}
+		
+		.sidebar-item-container:last-of-type .standard-sidebar-item {
+			border-bottom-left-radius: 8px;
+			border-bottom-right-radius: 8px;
+		}
+		}
+		.sidebar-child-item {
+			.standard-sidebar-item {
+				border-radius: 0 !important;
+			}
+		}
+		
+		
+
+
 		.standard-sidebar-section.show-control {
 			.desk-sidebar-item.standard-sidebar-item {
 				&:hover,
 				&.selected {
-					background-color: #a8d491;
+					background-color: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 50%, #E5E5E5 100%);
+
 					.drag-handle {
 						// display: inline-block;
 						// background-color: var(--bg-color);
