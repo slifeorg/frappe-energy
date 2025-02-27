@@ -182,8 +182,6 @@ body[data-route^="Module"] .main-menu {
 
 .layout-side-section {
 	@include get_textstyle("sm", "regular");
-	padding-right: 30px;
-
 	&.hide-sidebar {
 		display: none;
 	}
@@ -242,7 +240,6 @@ body[data-route^="Module"] .main-menu {
 			width: 40%;
 			display: block !important;
 			transition: transform 200ms ease-in-out;
-			padding: var(--padding-md);
 
 			&.opened {
 				transform: translateX(0);

@@ -296,7 +296,7 @@ frappe.views.Workspace = class Workspace {
 	}
 
 	add_drop_icon(item, sidebar_control, item_container) {
-		let drop_icon = "es-line-down";
+		let drop_icon = "es-line-down-chevron";
 		if (item_container.find(`[item-name="${this.current_page.name}"]`).length) {
 		  drop_icon = "small-up";
 		}
@@ -331,7 +331,7 @@ frappe.views.Workspace = class Workspace {
 
 		  // Toggle between #es-line-down and #es-line-up
 		  let icon_href = $icon.find("use").attr("href");
-		  let new_icon = icon_href === "#es-line-down" ? "#es-line-up" : "#es-line-down";
+		  let new_icon = icon_href === "#es-line-down-chevron" ? "#es-line-up-chevron" : "#es-line-down-chevron";
 		  $icon.find("use").attr("href", new_icon);
 
 		  // Ensure the custom class "drop-down" persists on the SVG element
