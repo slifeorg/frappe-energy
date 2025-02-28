@@ -1,11 +1,29 @@
 .navbar {
 	height: $navbar-height;
-	background: var(--navbar-bg);
-	border-bottom: 1px solid var(--border-color);
-	padding: 0;
+	background-color: #E9E9E9;
 	height: 70px;
-	.navbar-brand {
-		margin-right: 0;
+	padding: 15px 0;
+	
+	.logo-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-right: 0;
+		height: 100%;
+		overflow: hidden;
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%; 
+			width: 100%;
+		  }
+	}	
+	.navbar-logo{
+		max-height: 100%; 
+		max-width: 100%;
+		height: auto;
+		width: auto;
 	}
 	.navbar-nav {
 		.dropdown-item {
@@ -15,9 +33,6 @@
 		.nav-link {
 			padding: 0;
 		}
-	}
-	.container {
-		padding: 0 1rem;
 	}
 	.vertical-bar {
 		border-right: 1px solid var(--dark-border-color);
@@ -30,17 +45,6 @@
 		margin-left: var(--margin-md);
 		@include get_textstyle("sm", "regular");
 		line-height: 1rem;
-	}
-}
-
-// .btn-reset.nav-link {
-// 	display: none;
-// }
-
-.navbar-home {
-	img {
-		max-height: 72px;
-		width: auto;
 	}
 }
 
