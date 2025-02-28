@@ -114,7 +114,6 @@ body {
 .widget {
 	@include flex(flex, null, null, column);
 	min-height: 1px;
-	padding: 7px;
 	border-radius: var(--border-radius-lg);
 	height: 100%;
 	background-color: var(--card-bg);
@@ -1154,25 +1153,23 @@ body {
 		}
 
 		.standard-sidebar-section {
-		.sidebar-item-container:first-of-type .standard-sidebar-item {
-			border-top-left-radius: 8px;
-			border-top-right-radius: 8px;
+			.sidebar-item-container:first-of-type .standard-sidebar-item {
+				border-top-left-radius: 8px;
+				border-top-right-radius: 8px;
+			}
+			
+			.sidebar-item-container:last-of-type .standard-sidebar-item {
+				border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 8px;
+			} 
 		}
-		
-		.sidebar-item-container:last-of-type .standard-sidebar-item {
-			border-bottom-left-radius: 8px;
-			border-bottom-right-radius: 8px;
-		}
-		}
+
 		.sidebar-child-item {
 			.standard-sidebar-item {
 				border-radius: 0 !important;
 			}
 		}
 		
-		
-
-
 		.standard-sidebar-section.show-control {
 			.desk-sidebar-item.standard-sidebar-item {
 				&:hover,
@@ -1330,7 +1327,6 @@ body {
 				.ce-block__content {
 					max-width: 100%;
 					height: 100%;
-					padding: 7px;
 
 					& > div {
 						height: 100%;
