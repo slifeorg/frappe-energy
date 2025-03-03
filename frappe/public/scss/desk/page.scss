@@ -96,17 +96,14 @@
 }
 
 .page-head {
-	//temporarily added to hide the page head (remove later)
-	display: none;
 	z-index: 6;
 	position: sticky;
 	top: var(--navbar-height);
-	background: var(--bg-color);
+	background: inherit;
 	margin-bottom: 5px;
 	transition: 0.5s top;
-	background-color: #009345;
 	.page-head-content {
-		height: var(--page-head-height);
+		// height: var(--page-head-height);
 		padding: 8px 0px;
 	}
 }

@@ -1170,17 +1170,21 @@ body {
 			}
 		}
 
-		.standard-sidebar-section {
-			.sidebar-item-container:first-of-type .standard-sidebar-item {
+		.sidebar-item-container {
+			&[item-is-hidden="0"]:first-of-type {
+			  .standard-sidebar-item {
 				border-top-left-radius: 8px;
 				border-top-right-radius: 8px;
+			  }
 			}
-
-			.sidebar-item-container:last-of-type .standard-sidebar-item {
+		  
+			&[item-is-hidden="0"]:last-of-type {
+			  .standard-sidebar-item {
 				border-bottom-left-radius: 8px;
 				border-bottom-right-radius: 8px;
+			  }
 			}
-		}
+		  }
 
 		.sidebar-child-item {
 			.standard-sidebar-item {

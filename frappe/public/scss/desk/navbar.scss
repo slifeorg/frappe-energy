@@ -45,6 +45,11 @@
 		margin-left: var(--margin-md);
 		@include get_textstyle("sm", "regular");
 		line-height: 1rem;
+		.notifications-icon{
+			svg {
+				stroke: #6d7176;
+			}
+		}
 	}
 }
 
