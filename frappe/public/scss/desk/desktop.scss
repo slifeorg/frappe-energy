@@ -6,7 +6,7 @@ body {
 	::selection {
 		color: var(--neutral-black);
 		background: var(--gray-300);
-	} 
+	}
 }
 
 .desk-sidebar {
@@ -1011,10 +1011,10 @@ body {
 	}
 
 	.standard-sidebar-item {
-		display: flex;		
+		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		border: 1px solid #CCCCCC; 	
+		border: 1px solid #CCCCCC;
 		background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 50.32%, #E5E5E5 100%);
 		padding: 10px;
 		margin: 0;
@@ -1029,6 +1029,10 @@ body {
 			.sidebar-item-icon svg {
 				stroke: currentColor;
 			}
+			.sidebar-count{
+				background-color: #fff;
+				color:  #009345;
+				}
 		}
 
 		.nested-sidebar-label {
@@ -1044,6 +1048,20 @@ body {
 			padding: 0 !important;
 		}
 
+		.sidebar-count {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: #009345;
+			color: #fff;
+			font-weight: 400;
+			text-align: center;
+			margin: 0 0.5rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+		}
 
 
 		.sidebar-item-control {
@@ -1173,7 +1191,7 @@ body {
 				border-radius: 0 !important;
 			}
 		}
-		
+
 		.standard-sidebar-section.show-control {
 			.desk-sidebar-item.standard-sidebar-item {
 				&:hover,
