@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (stat_mapping[title] && this.job_stats[stat_mapping[title]] !== undefined && this.job_stats[stat_mapping[title]] > 0) {
                 const count = this.job_stats[stat_mapping[title]];
-                console.log(count);
+                //console.log(count);
                 const $label = $item.find(".sidebar-item-label");
                 $label.after(`<span class="sidebar-count">${count}</span>`);
             }
