@@ -35,18 +35,46 @@ function updateSidebarCounts() {
             "PERMITS": "permit_active_job",
             "HERS TESTS": "hers_test_active_job",
             "AIR BALANCE": "air_balance_active_job",
-            "TITLE 24": "title_24_active_job"
+            "TITLE 24": "title_24_active_job",
+            "\u3164\u3164\u3164\u3164NEW\u3164\u3164\u3164\u3164": "cf1r_new_job",
+            "\u3164\u3164\u3164\u3164PENDING\u3164\u3164\u3164\u3164": "cf1r_pending_job",
+            "\u3164\u3164\u3164\u3164NEEDS ATTENTION\u3164\u3164\u3164\u3164":  "cf1r_needs_attention_job",
+            "\u3164\u3164\u3164NEW\u3164\u3164\u3164":  "title_24_new_job",
+            "\u3164\u3164\u3164NEEDS ATTENTION\u3164\u3164\u3164": "title_24_needs_attention_job" ,
+            "\u3164\u3164\u3164SCHEDULED\u3164\u3164\u3164": "title_24_scheduled_job" ,
+            "\u3164\u3164\u3164RESCHEDULED\u3164\u3164\u3164": "title_24_rescheduled_job" ,
+            "\u3164\u3164\u3164FAILED\u3164\u3164\u3164": "title_24_failed_job" ,
+            "\u3164\u3164NEW\u3164\u3164":  "air_balance_new_job" ,
+            "\u3164\u3164PENDING\u3164\u3164":  "air_balance_pending_job" ,
+            "\u3164\u3164NEEDS ATTENTION\u3164\u3164":  "air_balance_needs_attention_job" ,
+            "\u3164\u3164SCHEDULED\u3164\u3164":  "air_balance_scheduled_job" ,
+            "\u3164\u3164RESCHEDULED\u3164\u3164":  "air_balance_rescheduled_job" ,
+            "\u3164\u3164FAILED\u3164\u3164":  "air_balance_failed_job" ,
+            "\u3164NEW\u3164":  "hers_test_new_job" ,
+            "\u3164PENDING\u3164":  "hers_test_pending_job" ,
+            "\u3164HERS ONLY\u3164":  "hers_test_hers_only_job" ,
+            "\u3164NEEDS ATTENTION\u3164":  "hers_test_needs_attention_job" ,
+            "\u3164SCHEDULED\u3164":  "hers_test_scheduled_job" ,
+            "\u3164RESCHEDULED\u3164":  "hers_test_rescheduled_job" ,
+            "\u3164FAILED\u3164":  "hers_test_failed_job" ,
+            "NEW": "permit_new_job" ,
+            "PENDING": "permit_pending_job" ,
+            "NEEDS ATTENTION": "permit_needs_attention_job" ,
+            "SCHEDULED": "permit_scheduled_job",
         };
+
 
         sidebarItems.forEach(item => {
             const label = item.querySelector(".sidebar-item-label");
             if (!label) return;
             const title = label.textContent.trim().toUpperCase();
 
+            const existingCount = item.querySelector(".sidebar-count");
+            if (existingCount) existingCount.remove();
             if (stat_mapping[title] && stats[stat_mapping[title]] !== undefined && stats[stat_mapping[title]] > 0) {
                 const count = stats[stat_mapping[title]];
-                const existingCount = item.querySelector(".sidebar-count");
-                if (existingCount) existingCount.remove();
+                // const existingCount = item.querySelector(".sidebar-count");
+                // if (existingCount) existingCount.remove();
                 label.insertAdjacentHTML("afterend", `<span class="sidebar-count">${count}</span>`);
             }
         });
@@ -81,7 +109,32 @@ document.addEventListener("DOMContentLoaded", function() {
                 "PERMITS": "permit_active_job",
                 "HERS TESTS": "hers_test_active_job",
                 "AIR BALANCE": "air_balance_active_job",
-                "TITLE 24": "title_24_active_job"
+                "TITLE 24": "title_24_active_job",
+                "\u3164\u3164\u3164\u3164NEW\u3164\u3164\u3164\u3164": "cf1r_new_job",
+                "\u3164\u3164\u3164\u3164PENDING\u3164\u3164\u3164\u3164": "cf1r_pending_job",
+                "\u3164\u3164\u3164\u3164NEEDS ATTENTION\u3164\u3164\u3164\u3164":  "cf1r_needs_attention_job",
+                "\u3164\u3164\u3164NEW\u3164\u3164\u3164":  "title_24_new_job",
+                "\u3164\u3164\u3164NEEDS ATTENTION\u3164\u3164\u3164": "title_24_needs_attention_job" ,
+                "\u3164\u3164\u3164SCHEDULED\u3164\u3164\u3164": "title_24_scheduled_job" ,
+                "\u3164\u3164\u3164RESCHEDULED\u3164\u3164\u3164": "title_24_rescheduled_job" ,
+                "\u3164\u3164\u3164FAILED\u3164\u3164\u3164": "title_24_failed_job" ,
+                "\u3164\u3164NEW\u3164\u3164":  "air_balance_new_job" ,
+                "\u3164\u3164PENDING\u3164\u3164":  "air_balance_pending_job" ,
+                "\u3164\u3164NEEDS ATTENTION\u3164\u3164":  "air_balance_needs_attention_job" ,
+                "\u3164\u3164SCHEDULED\u3164\u3164":  "air_balance_scheduled_job" ,
+                "\u3164\u3164RESCHEDULED\u3164\u3164":  "air_balance_rescheduled_job" ,
+                "\u3164\u3164FAILED\u3164\u3164":  "air_balance_failed_job" ,
+                "\u3164NEW\u3164":  "hers_test_new_job" ,
+                "\u3164PENDING\u3164":  "hers_test_pending_job" ,
+                "\u3164HERS ONLY\u3164":  "hers_test_hers_only_job" ,
+                "\u3164NEEDS ATTENTION\u3164":  "hers_test_needs_attention_job" ,
+                "\u3164SCHEDULED\u3164":  "hers_test_scheduled_job" ,
+                "\u3164RESCHEDULED\u3164":  "hers_test_rescheduled_job" ,
+                "\u3164FAILED\u3164":  "hers_test_failed_job" ,
+                "NEW": "permit_new_job" ,
+                "PENDING": "permit_pending_job" ,
+                "NEEDS ATTENTION": "permit_needs_attention_job" ,
+                "SCHEDULED": "permit_scheduled_job",
             };
 
             if (!this.job_stats) {
@@ -103,8 +156,10 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             const title = item.title.toUpperCase();
+
             if (stat_mapping[title] && this.job_stats[stat_mapping[title]] !== undefined && this.job_stats[stat_mapping[title]] > 0) {
                 const count = this.job_stats[stat_mapping[title]];
+                console.log(count);
                 const $label = $item.find(".sidebar-item-label");
                 $label.after(`<span class="sidebar-count">${count}</span>`);
             }
