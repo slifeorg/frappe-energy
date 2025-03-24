@@ -416,7 +416,7 @@ frappe.views.Workspace = class Workspace {
 			"TITLE 24",
 			"COMPANYㅤ",
 			"COMPANIES",
-			"City List",
+			"CITY LIST",
 			"STANDARD SEARCH",
 			"ADVANCED SEARCH",
 		];
