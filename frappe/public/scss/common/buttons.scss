@@ -87,14 +87,16 @@
 	&:active, &:hover, &:focus {		
 		background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 50%, #E5E5E5 100%);
 		border: 1px solid #016530;
+		box-shadow: none;
 	}
-	&:active {
-		color: var(--invert-neutral);		
+	&:active, &:focus {
+		color: var(--invert-neutral);			
 	}
 	&:hover {
 		color: #009345;
 	}
 }
+
 
 .btn-default {
 	background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 50%, #E5E5E5 100%);
@@ -103,8 +105,9 @@
 	&:hover,
 	&:active, &:focus {
 		background: linear-gradient(180deg, #00CB5F 0%, #009345 50%, #015D2C 100%);
-		color: var(--neutral);	
+		color: var(--neutral) !important;	
 		border: 1px solid #016530;
+		box-shadow: none;
 	}
 }
 
@@ -120,33 +123,6 @@
 	font-size: inherit;
 	background-color: inherit;
 	text-align: inherit;
-}
-
-.btn-primary {
-	background: linear-gradient(180deg, #00CB5F 0%, #009345 50%, #015D2C 100%);
-	color: var(--neutral);	
-	border: 1px solid #016530;
-	box-shadow: 0px 4px 4px 0px #00000040;
-	&:active, &:hover, &:focus {		
-		background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 50%, #E5E5E5 100%);
-		border: 1px solid #016530 !important;
-		color: var(--neutral);
-	}
-	&:hover {
-		color: #009345;
-	}
-}
-
-.btn-default {
-	background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 50%, #E5E5E5 100%);
-	border: 1px solid #CCCCCC;
-	color: #009345;
-	&:hover,
-	&:active, &:focus {
-		background: linear-gradient(180deg, #00CB5F 0%, #009345 50%, #015D2C 100%);
-		color: var(--neutral);	
-		border: 1px solid #016530;
-	}
 }
 
 .btn-lg{
