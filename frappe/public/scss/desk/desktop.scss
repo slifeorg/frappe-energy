@@ -1049,18 +1049,27 @@ body {
 		}
 
 		.sidebar-count {
-			width: 30px;
-			height: 30px;
-			border-radius: 50%;
+			display: inline-flex;
+			padding: 0.25rem 0.5rem;
+			border-radius: 100rem;
 			background-color: #009345;
-			color: #fff;
+			font-size: 0.85714285em;
 			font-weight: 400;
+			color: var(--neutral);
 			text-align: center;
-			margin: 0 0.5rem;
-			display: flex;
-			align-items: center;
+			white-space: nowrap;
 			justify-content: center;
+			align-items: center;
+			gap: 0.25rem;
 			overflow: hidden;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+			letter-spacing: 0.04em;
+			vertical-align: bottom;
+			line-height: 1;
+			min-width: 1.5em;
+			margin: 0 0.4rem;	
 		}
 
 
