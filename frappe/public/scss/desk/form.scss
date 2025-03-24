@@ -44,10 +44,11 @@
 		@include get_textstyle("lg", "semibold");
 		color: var(--text-color);
 		width: 100%;
-		padding: var(--padding-sm) var(--padding-md);
+		padding: var(--padding-md);
 		margin: 0;
-		margin-bottom: var(--margin-sm);
-		cursor: default;
+		border: 2px solid  #CCCCCC;
+		background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 50%, #E5E5E5 100%);
+		border-radius: 5px 5px 0 0;
 
 		.collapse-indicator {
 			color: var(--text-muted);
