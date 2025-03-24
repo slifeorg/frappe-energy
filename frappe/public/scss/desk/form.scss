@@ -42,13 +42,16 @@
 	.section-head {
 		@extend .head-title;
 		@include get_textstyle("lg", "semibold");
-		color: var(--text-color);
 		width: 100%;
 		padding: var(--padding-md);
 		margin: 0;
 		border: 2px solid  #CCCCCC;
 		background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 50%, #E5E5E5 100%);
 		border-radius: 5px 5px 0 0;
+		font-size: 16px;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #009346;
 
 		.collapse-indicator {
 			color: var(--text-muted);
@@ -127,8 +130,12 @@
 	@include get_textstyle("sm", "regular");
 }
 
+
 .control-label {
 	margin-bottom: 6px;
+	font-weight: 600;
+	text-transform: uppercase;
+
 }
 
 .form-inner-toolbar {
@@ -389,20 +396,27 @@
 }
 
 .form-group {
-	display: flex;
-	align-items: center;
-	margin-bottom: 0 !important;
-
+	display: grid;
+	grid-template-columns: 30% 70%; // Set grid to 2 columns with specified widths
+	gap: 3px;
+	margin-bottom: 3px;
+	
 	.clearfix {
-		width: 30%;
-	}
-
-	.clearfix label {
-		margin-left: 5px;
+		padding: 0.5rem;
+		height: 100%; 
 	}
 
 	.control-input-wrapper {
-		width: 100%;
+		width: 100%;	
+		padding: 0.5rem;
+		height: 100%; 
+		.control-input > * {
+			border-radius: 4px;
+		}	
+	}
+
+	.form-group:last-child {
+		margin-bottom: 0;
 	}
 
 	&.frappe-control:last-child {
@@ -410,6 +424,18 @@
 	}
 	&:last-child.frappe-control[data-fieldtype="Table"] {
 		margin-bottom: 0;
+	}
+}
+
+.frappe-control:nth-child(odd) {
+	.form-group > * {
+		background-color: #E9E9F0;
+	}
+}
+
+.frappe-control:nth-child(even) {
+	.form-group > * {
+		background-color: #F4F4F9;
 	}
 }
 
@@ -489,8 +515,6 @@
 .form-column.col-sm-20 {
 	position: relative;
 	width: 100%;
-	padding-right: 15px;
-	padding-left: 15px;
 }
 
 @media (min-width: map-get($grid-breakpoints, "sm")) {
