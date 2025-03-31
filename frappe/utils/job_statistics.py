@@ -16,7 +16,7 @@ def get_job_statistics(user, roles):
     # Child statuses per parent (excluding COMPLETED and N/A from counts)
     child_statuses = {
         'CF1R': ['NEW', 'PENDING', 'NEEDS ATTENTION'],
-        'TITLE 24': ['NEW', 'NEEDS ATTENTION', 'SCHEDULED', 'RESCHEDULED', 'FAILED'],
+        'TITLE 24': ['NEW', 'PENDING', 'NEEDS ATTENTION', 'SCHEDULED', 'RESCHEDULED', 'FAILED'],
         'AIR BALANCE': ['NEW', 'PENDING', 'NEEDS ATTENTION', 'SCHEDULED', 'RESCHEDULED', 'FAILED'],
         'HERS TESTS': ['NEW', 'PENDING', 'HERS ONLY', 'NEEDS ATTENTION', 'SCHEDULED', 'RESCHEDULED', 'FAILED'],
         'PERMITS': ['NEW', 'PENDING', 'NEEDS ATTENTION', 'SCHEDULED']
