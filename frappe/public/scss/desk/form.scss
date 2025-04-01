@@ -126,7 +126,7 @@
 
 .control-label,
 .grid-heading-row {
-	color: var(--text-muted);
+	color: var(--text-color);
 	@include get_textstyle("sm", "regular");
 }
 
@@ -397,9 +397,8 @@
 
 .form-group {
 	display: grid;
-	grid-template-columns: 30% 70%; // Set grid to 2 columns with specified widths
-	gap: 3px;
-	margin-bottom: 3px;
+	grid-template-columns: 30% 70%;
+	margin: 0;
 	
 	.clearfix {
 		padding: 0.5rem;
@@ -415,8 +414,8 @@
 		}	
 	}
 
-	.form-group:last-child {
-		margin-bottom: 0;
+	.form-group:first-child {
+		margin-top: -1px;
 	}
 
 	&.frappe-control:last-child {
@@ -430,12 +429,14 @@
 .frappe-control:nth-child(odd) {
 	.form-group > * {
 		background-color: #E9E9F0;
+		border: 1px solid #fff;
 	}
 }
 
 .frappe-control:nth-child(even) {
 	.form-group > * {
 		background-color: #F4F4F9;
+		border: 1px solid #fff;
 	}
 }
 
