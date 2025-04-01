@@ -1036,16 +1036,16 @@ body {
 		}
 
 		.nested-sidebar-label {
-			display: flex;          /* Use flexbox for alignment */
-			align-items: center;    /* Vertically center the text */
-			justify-content: center; /* Horizontally center the text */
-			text-align: center;     /* Center text inside the element */
-			width: 100%;            /* Ensure the label spans the full width */
-			height: 100%;           /* Match the height of the container */
+			display: flex;          
+			align-items: center;   
+			justify-content: start;
+			text-align: center;
+			width: 100%; 
+			height: 100%;
 		}
 
 		.nested-item-anchor {
-			padding: 0 !important;
+			padding: 0 1.2rem 0 1.9rem;
 		}
 
 		.sidebar-count {
