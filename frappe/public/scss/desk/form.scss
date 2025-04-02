@@ -54,10 +54,10 @@
 		color: #009346;
 
 		.collapse-indicator {
-			color: var(--text-muted);
-			margin-left: 10px;
-			position: relative;
-			padding: 0px;
+			color: inherit;
+			svg {
+				stroke: currentColor;
+			}
 		}
 	}
 

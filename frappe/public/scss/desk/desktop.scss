@@ -1012,11 +1012,9 @@ body {
 
 	.standard-sidebar-item {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
 		border: 1px solid #CCCCCC;
 		background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 50.32%, #E5E5E5 100%);
-		padding: 10px;
 		margin: 0;
 		border-radius: 0;
 
@@ -1035,43 +1033,15 @@ body {
 				}
 		}
 
-		.nested-sidebar-label {
-			display: flex;          
-			align-items: center;   
-			justify-content: start;
-			text-align: center;
-			width: 100%; 
+		.item-anchor {
+			flex: 1;
 			height: 100%;
-		}
-
-		.nested-item-anchor {
-			padding: 0 1.2rem 0 1.9rem;
-		}
-
-		.sidebar-count {
-			display: inline-flex;
-			padding: 0.25rem 0.5rem;
-			border-radius: 100rem;
-			background-color: #009345;
-			font-size: 0.85714285em;
-			font-weight: 400;
-			color: var(--neutral);
-			text-align: center;
-			white-space: nowrap;
-			justify-content: center;
-			align-items: center;
-			gap: 0.25rem;
+			width: 100%;
 			overflow: hidden;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			user-select: none;
-			letter-spacing: 0.04em;
-			vertical-align: bottom;
-			line-height: 1;
-			min-width: 1.5em;
-			margin: 0 0.4rem;	
+			color: inherit;
+			display: flex;
+			align-items: center;
 		}
-
 
 		.sidebar-item-control {
 			> * {
@@ -1113,23 +1083,45 @@ body {
 			}
 		}
 
+		.sidebar-item-icon svg {
+			stroke: #009345;
+		}		
+
 		.sidebar-item-label {
 			flex: 1;
 			text-transform: uppercase;
 			font-weight: 500;
 			color: inherit;
 		}
-		.sidebar-item-label,
-		.sidebar-item-icon svg {
-			stroke: #009345;
+
+		.nested-item-anchor {
+			padding: 0 1.2rem 0 1.9rem;
 		}
 
-		.item-anchor {
-			display: flex;
+		.sidebar-count {
+			display: inline-flex;
+			padding: 0.25rem 0.5rem;
+			border-radius: 100rem;
+			background-color: #009345;
+			font-size: 0.85714285em;
+			font-weight: 400;
+			color: var(--neutral);
+			text-align: center;
+			white-space: nowrap;
+			justify-content: center;
+			align-items: center;
+			gap: 0.25rem;
 			overflow: hidden;
-			flex: 1;
-			color: inherit;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+			letter-spacing: 0.04em;
+			vertical-align: bottom;
+			line-height: 1;
+			min-width: 1.5em;
+			margin: 0 0.4rem;	
 		}
+		
 	}
 
 	.sidebar-item-container {
@@ -1644,6 +1636,3 @@ body {
 		margin-right: 5px;
 	}
 }
-.item-anchor {
-	padding: 0;
-  }
