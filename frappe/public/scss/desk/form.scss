@@ -54,10 +54,10 @@
 		color: #009346;
 
 		.collapse-indicator {
-			color: var(--text-muted);
-			margin-left: 10px;
-			position: relative;
-			padding: 0px;
+			color: inherit;
+			svg {
+				stroke: currentColor;
+			}
 		}
 	}
 
@@ -527,10 +527,10 @@
 
 // above mobile
 @media (min-width: map-get($grid-breakpoints, "md")) {
-	.layout-main .form-column.col-sm-12 > form > .input-max-width {
-		max-width: 50%;
-		padding-right: 15px;
-	}
+	// .layout-main .form-column.col-sm-12 > form > .input-max-width {
+	// 	max-width: 50%;
+	// 	padding-right: 15px;
+	// }
 
 	// don't max-width when in form-grid with half width
 	.col-sm-6 .form-grid .form-column.col-sm-12 > form > .input-max-width {
