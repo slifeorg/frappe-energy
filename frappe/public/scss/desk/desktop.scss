@@ -1085,7 +1085,7 @@ body {
 
 		.sidebar-item-icon svg {
 			stroke: #009345;
-		}		
+		}
 
 		.sidebar-item-label {
 			flex: 1;
@@ -1095,7 +1095,7 @@ body {
 		}
 
 		.nested-item-anchor {
-			padding: 0 1.2rem 0 1.9rem;
+			padding-left: 0.5rem;
 		}
 
 		.sidebar-count {
@@ -1119,9 +1119,9 @@ body {
 			vertical-align: bottom;
 			line-height: 1;
 			min-width: 1.5em;
-			margin: 0 0.4rem;	
+			margin: 0 0.4rem;
 		}
-		
+
 	}
 
 	.sidebar-item-container {
@@ -1178,7 +1178,7 @@ body {
 				border-top-right-radius: 8px;
 			  }
 			}
-		  
+
 			&[item-is-hidden="0"]:last-of-type {
 			  .standard-sidebar-item {
 				border-bottom-left-radius: 8px;
