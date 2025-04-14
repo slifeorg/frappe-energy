@@ -403,7 +403,7 @@ frappe.views.Workspace = class Workspace {
 			"HERS TESTS": ["NEWㅤ", "PENDINGㅤ", "HERS ONLYㅤ", "NEEDS ATTENTIONㅤ", "SCHEDULEDㅤ", "RESCHEDULEDㅤ", "FAILEDㅤ", "COMPLETEDㅤ"],
 			"AIR BALANCE": ["NEWㅤㅤ", "PENDINGㅤㅤ", "NEEDS ATTENTIONㅤㅤ", "SCHEDULEDㅤㅤ", "RESCHEDULEDㅤㅤ", "FAILEDㅤㅤ", "COMPLETEDㅤㅤ"],
 			"TITLE 24": ["NEWㅤㅤㅤ", "PENDINGㅤㅤㅤ", "NEEDS ATTENTIONㅤㅤㅤ", "SCHEDULEDㅤㅤㅤ", "RESCHEDULEDㅤㅤㅤ", "FAILEDㅤㅤㅤ", "COMPLETEDㅤㅤㅤ"],
-			"CF1R": ["NEWㅤㅤㅤㅤ", "PENDINGㅤㅤㅤㅤ", "NEEDS ATTENTIONㅤㅤㅤㅤ", "COMPLETEDㅤㅤㅤㅤ"],
+			"CF1R": ["NEWㅤㅤㅤㅤ", "PENDINGㅤㅤㅤㅤ", "NEEDS АTTENTION", "COMPLETEDㅤㅤㅤㅤ"],
 		};
 
 		const topLevelOrder = [
