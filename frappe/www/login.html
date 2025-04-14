@@ -60,7 +60,7 @@
 {% macro logo_section(title=null) %}
 <div class="page-card-head">
 	<img class="app-logo" src="{{ logo }}">
-	<h4>WELCOME!<br><br> Please sign-in to your account and start the adventure</h4>
+	<h4>WELCOME!<br><br> Welcome to Energy Masters Portal</h4>
 </div>
 {% endmacro %}
 
@@ -83,7 +83,7 @@
 					<form class="form-signin form-login" role="form">
 						{{ email_login_body() }}
 					</form>
-					<div class="social-logins text-center">
+					<div class="social-logins text-center hide">
 						{% if not disable_user_pass_login or (ldap_settings and ldap_settings.enabled) %}
 						<p class="text-muted login-divider">{{ _("or") }}</p>
 						{% endif %}
