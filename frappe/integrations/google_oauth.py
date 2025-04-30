@@ -13,17 +13,21 @@ _SCOPES = {
 	"contacts": ("https://www.googleapis.com/auth/contacts"),
 	"drive": ("https://www.googleapis.com/auth/drive"),
 	"indexing": ("https://www.googleapis.com/auth/indexing"),
+	"sheets": ("https://www.googleapis.com/auth/spreadsheets")  # Added for Google Sheets
 }
 _SERVICES = {
 	"contacts": ("people", "v1"),
 	"drive": ("drive", "v3"),
 	"indexing": ("indexing", "v3"),
+	"sheets": ("sheets", "v4")  # Added for Google Sheets
 }
 _DOMAIN_CALLBACK_METHODS = {
 	"mail": "frappe.email.oauth.authorize_google_access",
 	"contacts": "frappe.integrations.doctype.google_contacts.google_contacts.authorize_access",
 	"drive": "frappe.integrations.doctype.google_drive.google_drive.authorize_access",
 	"indexing": "frappe.website.doctype.website_settings.google_indexing.authorize_access",
+	"sheets": "frappe.integrations.doctype.google_sheets_settings.google_sheets_settings.authorize_access"  # To be implemented
+
 }
 
 

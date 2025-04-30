@@ -195,6 +195,9 @@ doc_events = {
 	"Page": {
 		"on_update": "frappe.cache_manager.build_domain_restriced_page_cache",
 	},
+    "Job": {
+        "after_insert": "frappe.integrations.doctype.google_sheets_settings.google_sheets_settings.append_to_google_sheet"
+    }
 }
 
 scheduler_events = {

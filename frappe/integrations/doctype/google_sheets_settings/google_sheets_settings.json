@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-04-28 16:15:54.039882",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enable",
+  "spreadsheet_id",
+  "sheet_name",
+  "authorization_code",
+  "refresh_token"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "enable",
+   "fieldtype": "Check",
+   "label": "Enable"
+  },
+  {
+   "depends_on": "enable",
+   "description": "ID of the Google Sheet from the URL (e.g., 1a2b3c4d5e6f7g8h9i0j)",
+   "fieldname": "spreadsheet_id",
+   "fieldtype": "Data",
+   "label": "Spreadsheet ID"
+  },
+  {
+   "depends_on": "enable",
+   "description": "Name of the sheet tab (e.g., Sheet1)",
+   "fieldname": "sheet_name",
+   "fieldtype": "Data",
+   "label": "Sheet Name"
+  },
+  {
+   "fieldname": "authorization_code",
+   "fieldtype": "Password",
+   "hidden": 1,
+   "label": "Authorization Code"
+  },
+  {
+   "fieldname": "refresh_token",
+   "fieldtype": "Password",
+   "hidden": 1,
+   "label": "Refresh Token"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-04-29 13:30:58.580062",
+ "modified_by": "Administrator",
+ "module": "Integrations",
+ "name": "Google Sheets Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "spreadsheet_id"
+}
