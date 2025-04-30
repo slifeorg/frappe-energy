@@ -40,6 +40,7 @@ app_include_css = [
 app_include_icons = [
 	"frappe/icons/timeless/icons.svg",
 	"frappe/icons/espresso/icons.svg",
+    "frappe/icons/custom-energy/icons.svg",
 ]
 
 doctype_js = {

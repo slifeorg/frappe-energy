@@ -408,16 +408,16 @@ frappe.views.Workspace = class Workspace {
 
 		const topLevelOrder = [
 			"DASHBOARDㅤ",
-			"CREATE A JOB",
+			"REQUEST A JOB",
+			"STANDARD SEARCH",
 			"CF1R",
 			"PERMITS",
 			"HERS TESTS",
 			"AIR BALANCE",
 			"TITLE 24",
-			"COMPANYㅤ",
+			"MY COMPANY",
 			"COMPANIES",
 			"CITY LIST",
-			"STANDARD SEARCH",
 			"ADVANCED SEARCH",
 		];
 
