@@ -41,7 +41,7 @@ def get_job_statistics(user, roles):
             CAST(SUM(CASE WHEN air_balance_status NOT IN ({status_placeholders}) AND type = 'AIR BALANCE' THEN 1 ELSE 0 END) AS UNSIGNED) AS air_balance_active_job,
             CAST(SUM(CASE WHEN title24_status NOT IN ({status_placeholders}) AND type = 'TITLE 24' THEN 1 ELSE 0 END) AS UNSIGNED) AS title_24_active_job,
             CAST(SUM(CASE WHEN hers_status NOT IN ({status_placeholders}) AND (type = 'HERS & PERMITS' OR type = 'HERS TESTS ONLY') THEN 1 ELSE 0 END) AS UNSIGNED) AS hers_test_active_job,
-            CAST(SUM(CASE WHEN permit_status NOT IN ({status_placeholders}) AND type = (type = 'HERS & PERMITS' OR type = 'PERMIT ONLY') THEN 1 ELSE 0 END) AS UNSIGNED) AS permit_active_job,
+            CAST(SUM(CASE WHEN permit_status NOT IN ({status_placeholders}) AND (type = 'HERS & PERMITS' OR type = 'PERMIT ONLY') THEN 1 ELSE 0 END) AS UNSIGNED) AS permit_active_job,
             CAST(SUM(CASE WHEN cf1r_status NOT IN ({status_placeholders}) AND type = 'CF1R' THEN 1 ELSE 0 END) AS UNSIGNED) AS cf1r_active_job,
             -- Child-level counts
             {', '.join([
