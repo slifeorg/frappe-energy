@@ -16,7 +16,7 @@ def get_job_statistics(user, roles):
     # Child statuses per parent (excluding COMPLETED and N/A from counts)
     child_statuses = {
         'CF1R': ['NEW', 'PENDING', 'NEEDS ATTENTION'],
-        'TITLE 24': ['NEW', 'PENDING', 'NEEDS ATTENTION', 'SCHEDULED', 'RESCHEDULED', 'FAILED'],
+        'TITLE 24': ['NEW', 'NEEDS ATTENTION', 'SCHEDULED', 'RESCHEDULED', 'FAILED'],
         'AIR BALANCE': ['NEW', 'PENDING', 'NEEDS ATTENTION', 'SCHEDULED', 'RESCHEDULED', 'FAILED'],
         'HERS TESTS': ['NEW', 'PENDING', 'HERS ONLY', 'NEEDS ATTENTION', 'SCHEDULED', 'RESCHEDULED', 'FAILED'],
         'PERMITS': ['NEW', 'PENDING', 'NEEDS ATTENTION', 'SCHEDULED']
@@ -41,7 +41,7 @@ def get_job_statistics(user, roles):
             CAST(SUM(CASE WHEN air_balance_status NOT IN ({status_placeholders}) AND type = 'AIR BALANCE' THEN 1 ELSE 0 END) AS UNSIGNED) AS air_balance_active_job,
             CAST(SUM(CASE WHEN title24_status NOT IN ({status_placeholders}) AND type = 'TITLE 24' THEN 1 ELSE 0 END) AS UNSIGNED) AS title_24_active_job,
             CAST(SUM(CASE WHEN hers_status NOT IN ({status_placeholders}) AND (type = 'HERS & PERMITS' OR type = 'HERS TESTS ONLY') THEN 1 ELSE 0 END) AS UNSIGNED) AS hers_test_active_job,
-            CAST(SUM(CASE WHEN permit_status NOT IN ({status_placeholders}) AND type = 'PERMIT ONLY' THEN 1 ELSE 0 END) AS UNSIGNED) AS permit_active_job,
+            CAST(SUM(CASE WHEN permit_status NOT IN ({status_placeholders}) AND type = (type = 'HERS & PERMITS' OR type = 'PERMIT ONLY') THEN 1 ELSE 0 END) AS UNSIGNED) AS permit_active_job,
             CAST(SUM(CASE WHEN cf1r_status NOT IN ({status_placeholders}) AND type = 'CF1R' THEN 1 ELSE 0 END) AS UNSIGNED) AS cf1r_active_job,
             -- Child-level counts
             {', '.join([
@@ -61,7 +61,7 @@ def get_job_statistics(user, roles):
                 for status in child_statuses['HERS TESTS']
             ])},
             {', '.join([
-                f"CAST(SUM(CASE WHEN permit_status = '{status}' AND type = 'PERMIT ONLY' AND permit_status NOT IN ({status_placeholders}) THEN 1 ELSE 0 END) AS UNSIGNED) AS permit_{status.lower().replace(' ', '_')}_job"
+                f"CAST(SUM(CASE WHEN permit_status = '{status}' AND (type = 'HERS & PERMITS' OR type = 'PERMIT ONLY') AND permit_status NOT IN ({status_placeholders}) THEN 1 ELSE 0 END) AS UNSIGNED) AS permit_{status.lower().replace(' ', '_')}_job"
                 for status in child_statuses['PERMITS']
             ])}
         FROM `tabJob`
