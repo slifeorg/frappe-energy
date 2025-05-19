@@ -31,11 +31,13 @@ app_include_js = [
 	"controls.bundle.js",
 	"report.bundle.js",
 	"telemetry.bundle.js",
+    "/assets/frappe/js/sidebar-toggle.js"
 ]
 
 app_include_css = [
 	"desk.bundle.css",
 	"report.bundle.css",
+    "/assets/frappe/css/custom.css"
 ]
 app_include_icons = [
 	"frappe/icons/timeless/icons.svg",

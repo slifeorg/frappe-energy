@@ -1,0 +1,123 @@
+/* Sidebar top */
+
+.list-sidebar .sidebar-top {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.list-sidebar .sidebar-top img {
+    width: 118px;
+}
+
+/* First element of the sidebar */
+
+[item-name^="DASHBOARD"] .standard-sidebar-item {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Toggle Sidebar Button + Icon */
+
+.custom-toggle-sidebar {
+    display: none;
+    border: none;
+    background: transparent;
+
+    width: 38px;
+    aspect-ratio: 1 / 1;
+    place-items: center;
+    margin-left: 10px;
+}
+
+.custom-toggle-sidebar .burger-icon,
+.custom-toggle-sidebar .burger-icon::before,
+.custom-toggle-sidebar .burger-icon::after {
+    width: 22px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #016530;
+}
+
+.custom-toggle-sidebar .burger-icon {
+    position: relative;
+}
+
+.custom-toggle-sidebar .burger-icon::before,
+.custom-toggle-sidebar .burger-icon::after {
+    content: "";
+    left: 0;
+    position: absolute;
+}
+
+.custom-toggle-sidebar .burger-icon::before { top: -10px; }
+.custom-toggle-sidebar .burger-icon::after { top: 10px; }
+
+/* Close Sidebar Button + Icon */
+
+.custom-close-sidebar {
+    display: none;
+    border: none;
+    background: transparent;
+
+    width: 28px;
+    aspect-ratio: 1 / 1;
+    place-items: center;
+
+    position: absolute;
+    left: 16px;
+}
+
+.custom-close-sidebar .arrow-back-icon {
+    position: relative;
+}
+
+.custom-close-sidebar .arrow-back-icon::before,
+.custom-close-sidebar .arrow-back-icon::after {
+    content: "";
+    left: 0;
+    position: absolute;
+    width: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #016530;
+    transform-origin: 1px;
+}
+
+.custom-close-sidebar .arrow-back-icon::before { transform: rotate(-45deg); }
+.custom-close-sidebar .arrow-back-icon::after { transform: rotate(45deg); }
+
+/* Sidebar on smaller screens */
+
+@media (max-width: 990px) {
+    .list-sidebar .sidebar-top {
+        display: flex;
+    }
+
+    .custom-toggle-sidebar,
+    .custom-close-sidebar {
+        display: grid;
+    }
+
+    .list-sidebar {
+        background: #E9E9E9 !important;
+        transition: all 0.4s ease !important;
+        padding: 20px 16px 50px;
+        overflow-y: overlay;
+    }
+
+    .list-sidebar.show-sidebar {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 576px) {
+    .list-sidebar {
+        width: 100% !important;
+    }
+
+    .list-sidebar .sidebar-item-label {
+        font-size: 20px;
+    }
+}
