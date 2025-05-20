@@ -1,13 +1,15 @@
 /* Sidebar top */
 
-.list-sidebar .sidebar-top {
+.list-sidebar .sidebar-top,
+.form-sidebar .sidebar-top {
     display: none;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.list-sidebar .sidebar-top img {
+.list-sidebar .sidebar-top img,
+.form-sidebar .sidebar-top img {
     width: 118px;
 }
 
@@ -91,7 +93,8 @@
 /* Sidebar on smaller screens */
 
 @media (max-width: 990px) {
-    .list-sidebar .sidebar-top {
+    .list-sidebar .sidebar-top,
+    .form-sidebar .sidebar-top {
         display: flex;
     }
 
@@ -100,24 +103,26 @@
         display: grid;
     }
 
-    .list-sidebar {
+    .list-sidebar, .form-sidebar {
         background: #E9E9E9 !important;
         transition: all 0.4s ease !important;
         padding: 20px 16px 50px;
         overflow-y: overlay;
     }
 
-    .list-sidebar.show-sidebar {
+    .list-sidebar.show-sidebar,
+    .form-sidebar.show-sidebar {
         transform: translateX(0);
     }
 }
 
 @media (max-width: 576px) {
-    .list-sidebar {
+    .list-sidebar, .form-sidebar {
         width: 100% !important;
     }
 
-    .list-sidebar .sidebar-item-label {
+    .list-sidebar .sidebar-item-label,
+    .form-sidebar .sidebar-item-label {
         font-size: 20px;
     }
 }
