@@ -90,6 +90,38 @@
 .custom-close-sidebar .arrow-back-icon::before { transform: rotate(-45deg); }
 .custom-close-sidebar .arrow-back-icon::after { transform: rotate(45deg); }
 
+/* Go Back Button + Icon */
+
+.custom-go-back {
+    display: none;
+    border: none;
+    background: transparent;
+
+    width: 28px;
+    aspect-ratio: 1 / 1;
+    place-items: center;
+    margin-left: 10px;
+}
+
+.custom-go-back .arrow-back-icon {
+    position: relative;
+}
+
+.custom-go-back .arrow-back-icon::before,
+.custom-go-back .arrow-back-icon::after {
+    content: "";
+    left: 0;
+    position: absolute;
+    width: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #016530;
+    transform-origin: 1px;
+}
+
+.custom-go-back .arrow-back-icon::before { transform: rotate(-45deg); }
+.custom-go-back .arrow-back-icon::after { transform: rotate(45deg); }
+
 /* Sidebar on smaller screens */
 
 @media (max-width: 990px) {
@@ -99,7 +131,8 @@
     }
 
     .custom-toggle-sidebar,
-    .custom-close-sidebar {
+    .custom-close-sidebar,
+    .custom-go-back {
         display: grid;
     }
 
