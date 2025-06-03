@@ -395,7 +395,7 @@
 	}
 }
 
-.form-group {
+.form-group:not([data-fieldname="users"]) {
 	display: grid;
 	grid-template-columns: 30% 70%;
 	margin: 0;
